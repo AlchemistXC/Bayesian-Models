@@ -1,0 +1,259 @@
+
+ -----------------------------Summary Statistics:-----------------------------
+
+ [Report MCMC Class] (Last Updated 2008/11/22)
+
+  Date:2022-03-24  1:09:41
+
+  Number of obs. is 5000
+
+ [Basic Summary Statistics] 
+
+                      Mean        Stdev         95%L       Median         95%U
+**  sigma           3.5953      0.21113       3.2172       3.5829       4.0532
+**  Beta0           1.0000      0.00000       1.0000       1.0000       1.0000
+**  Beta1           1.0000      0.00000       1.0000       1.0000       1.0000
+**  Beta2           1.0000      0.00000       1.0000       1.0000       1.0000
+**  Beta3           1.0000      0.00000       1.0000       1.0000       1.0000
+
+ Note: *(**) -> 95(99)% credible interval does not contain 0.
+
+ [Diagnostic Statistics] 
+
+                 CD           IF
+sigma       0.27056      0.78836
+Beta0          .NaN         .NaN
+Beta1          .NaN         .NaN
+Beta2          .NaN         .NaN
+Beta3          .NaN         .NaN
+
+ [Covariance (Lower), Variance (Diagonal) and Correlation (Upper)]
+
+              sigma        Beta0        Beta1        Beta2        Beta3
+sigma      0.044577      0.00000      0.00000      0.00000      0.00000
+Beta0       0.00000      -1.0000      0.00000      0.00000      0.00000
+Beta1       0.00000      0.00000      -1.0000      0.00000      0.00000
+Beta2       0.00000      0.00000      0.00000      -1.0000      0.00000
+Beta3       0.00000      0.00000      0.00000      0.00000      -1.0000
+
+ -----------------------------Summary Statistics:-----------------------------
+
+ [Report MCMC Class] (Last Updated 2008/11/22)
+
+  Date:2022-03-24  1:15:06
+
+  Number of obs. is 5000
+
+ [Basic Summary Statistics] 
+
+                      Mean        Stdev         95%L       Median         95%U
+**  sigma           1.0000      0.00000       1.0000       1.0000       1.0000
+*   Beta0           1.2809      0.60418      0.11705       1.2789       2.4679
+**  Beta1          0.80476      0.16623      0.48204      0.80833       1.1214
+**  Beta2          0.73564      0.15910      0.42459      0.73430       1.0479
+    Beta3         -0.55947      0.36450      -1.2725     -0.55419      0.15069
+
+ Note: *(**) -> 95(99)% credible interval does not contain 0.
+
+ [Diagnostic Statistics] 
+
+                 CD           IF
+sigma          .NaN         .NaN
+Beta0       0.80645      0.92045
+Beta1       0.85536      0.97777
+Beta2       0.24197       1.0913
+Beta3       0.31775       1.0584
+
+ [Covariance (Lower), Variance (Diagonal) and Correlation (Upper)]
+
+              sigma        Beta0        Beta1        Beta2        Beta3
+sigma       -1.0000      0.00000      0.00000      0.00000      0.00000
+Beta0       0.00000      0.36503     -0.92696     -0.41103      0.26843
+Beta1       0.00000    -0.093100     0.027634      0.14035    -0.060868
+Beta2       0.00000    -0.039510    0.0037121     0.025314     -0.95475
+Beta3       0.00000     0.059115   -0.0036882    -0.055369      0.13286
+
+ -----------------------------Summary Statistics:-----------------------------
+
+ [Report MCMC Class] (Last Updated 2008/11/22)
+
+  Date:2022-03-24  1:15:17
+
+  Number of obs. is 5000
+
+ [Basic Summary Statistics] 
+
+                      Mean        Stdev         95%L       Median         95%U
+**  sigma           3.5953      0.21113       3.2172       3.5829       4.0532
+**  Beta0           1.0000      0.00000       1.0000       1.0000       1.0000
+**  Beta1           1.0000      0.00000       1.0000       1.0000       1.0000
+**  Beta2           1.0000      0.00000       1.0000       1.0000       1.0000
+**  Beta3           1.0000      0.00000       1.0000       1.0000       1.0000
+
+ Note: *(**) -> 95(99)% credible interval does not contain 0.
+
+ [Diagnostic Statistics] 
+
+                 CD           IF
+sigma       0.27056      0.78836
+Beta0          .NaN         .NaN
+Beta1          .NaN         .NaN
+Beta2          .NaN         .NaN
+Beta3          .NaN         .NaN
+
+ [Covariance (Lower), Variance (Diagonal) and Correlation (Upper)]
+
+              sigma        Beta0        Beta1        Beta2        Beta3
+sigma      0.044577      0.00000      0.00000      0.00000      0.00000
+Beta0       0.00000      -1.0000      0.00000      0.00000      0.00000
+Beta1       0.00000      0.00000      -1.0000      0.00000      0.00000
+Beta2       0.00000      0.00000      0.00000      -1.0000      0.00000
+Beta3       0.00000      0.00000      0.00000      0.00000      -1.0000
+
+ -----------------------------Summary Statistics:-----------------------------
+
+ [Report MCMC Class] (Last Updated 2008/11/22)
+
+  Date:2022-03-24  1:16:00
+
+  Number of obs. is 5000
+
+ [Basic Summary Statistics] 
+
+                      Mean        Stdev         95%L       Median         95%U
+**  sigma        0.0025918   0.00015018    0.0023176    0.0025856    0.0029121
+**  Beta0           1.8560    0.0020810       1.8520       1.8560       1.8601
+**  Beta1          0.65084   0.00055404      0.64976      0.65085      0.65194
+**  Beta2          0.70914   0.00046798      0.70821      0.70914      0.71004
+**  Beta3         -0.55649    0.0010452     -0.55853     -0.55650     -0.55442
+
+ Note: *(**) -> 95(99)% credible interval does not contain 0.
+
+ [Diagnostic Statistics] 
+
+                 CD           IF
+sigma       0.19631       1.1682
+Beta0       0.40641      0.93876
+Beta1       0.28800      0.94925
+Beta2       0.61360       1.0678
+Beta3       0.43085       1.0703
+
+ [Covariance (Lower), Variance (Diagonal) and Correlation (Upper)]
+
+              sigma        Beta0        Beta1        Beta2        Beta3
+sigma    2.2555e-08    0.0097735  -0.00057123    -0.018145    0.0097270
+Beta0    3.0545e-09   4.3305e-06     -0.95213     -0.50428      0.35144
+Beta1   -4.7531e-11  -1.0978e-06   3.0696e-07      0.28966     -0.17677
+Beta2   -1.2753e-09  -4.9110e-07   7.5103e-08   2.1901e-07     -0.95794
+Beta3    1.5268e-09   7.6439e-07  -1.0236e-07  -4.6856e-07   1.0924e-06
+
+ -----------------------------Summary Statistics:-----------------------------
+
+ [Report MCMC Class] (Last Updated 2008/11/22)
+
+  Date:2022-03-24  1:17:46
+
+  Number of obs. is 5000
+
+ [Basic Summary Statistics] 
+
+                      Mean        Stdev         95%L       Median         95%U
+**  sigma           1.0000      0.00000       1.0000       1.0000       1.0000
+**  Beta0           1.0000      0.00000       1.0000       1.0000       1.0000
+**  Beta1           1.0000      0.00000       1.0000       1.0000       1.0000
+**  Beta2           1.0000      0.00000       1.0000       1.0000       1.0000
+**  Beta3           1.0000      0.00000       1.0000       1.0000       1.0000
+
+ Note: *(**) -> 95(99)% credible interval does not contain 0.
+
+ [Diagnostic Statistics] 
+
+                 CD           IF
+sigma          .NaN         .NaN
+Beta0          .NaN         .NaN
+Beta1          .NaN         .NaN
+Beta2          .NaN         .NaN
+Beta3          .NaN         .NaN
+
+ [Covariance (Lower), Variance (Diagonal) and Correlation (Upper)]
+
+              sigma        Beta0        Beta1        Beta2        Beta3
+sigma       -1.0000      0.00000      0.00000      0.00000      0.00000
+Beta0       0.00000      -1.0000      0.00000      0.00000      0.00000
+Beta1       0.00000      0.00000      -1.0000      0.00000      0.00000
+Beta2       0.00000      0.00000      0.00000      -1.0000      0.00000
+Beta3       0.00000      0.00000      0.00000      0.00000      -1.0000
+
+ -----------------------------Summary Statistics:-----------------------------
+
+ [Report MCMC Class] (Last Updated 2008/11/22)
+
+  Date:2022-03-24  1:18:16
+
+  Number of obs. is 5000
+
+ [Basic Summary Statistics] 
+
+                      Mean        Stdev         95%L       Median         95%U
+**  sigma           64.804       43.930       10.117       53.599       175.07
+**  Beta0           64.804       43.930       10.117       53.599       175.07
+**  Beta1           64.804       43.930       10.117       53.599       175.07
+**  Beta2           64.804       43.930       10.117       53.599       175.07
+    Beta3          0.18074      0.98681      -1.7272      0.18823       2.1108
+
+ Note: *(**) -> 95(99)% credible interval does not contain 0.
+
+ [Diagnostic Statistics] 
+
+                 CD           IF
+sigma       0.77399       2.1616
+Beta0       0.77399       2.1616
+Beta1       0.77399       2.1616
+Beta2       0.77399       2.1616
+Beta3       0.80195       1.0012
+
+ [Covariance (Lower), Variance (Diagonal) and Correlation (Upper)]
+
+              sigma        Beta0        Beta1        Beta2        Beta3
+sigma        1929.8       1.0000       1.0000       1.0000     -0.19402
+Beta0        1929.8       1929.8       1.0000       1.0000     -0.19402
+Beta1        1929.8       1929.8       1929.8       1.0000     -0.19402
+Beta2        1929.8       1929.8       1929.8       1929.8     -0.19402
+Beta3       -8.4107      -8.4107      -8.4107      -8.4107      0.97379
+
+ -----------------------------Summary Statistics:-----------------------------
+
+ [Report MCMC Class] (Last Updated 2008/11/22)
+
+  Date:2022-03-24  1:27:31
+
+  Number of obs. is 5000
+
+ [Basic Summary Statistics] 
+
+                      Mean        Stdev         95%L       Median         95%U
+**  sigma          0.31590     0.018584      0.28166      0.31508      0.35547
+**  Beta0           1.7636      0.24528       1.2921       1.7626       2.2435
+**  Beta1          0.67465     0.065548      0.54687      0.67519      0.80426
+**  Beta2          0.71581     0.056082      0.60472      0.71648      0.82493
+**  Beta3         -0.56236      0.12567     -0.80705     -0.56311     -0.31462
+
+ Note: *(**) -> 95(99)% credible interval does not contain 0.
+
+ [Diagnostic Statistics] 
+
+                 CD           IF
+sigma       0.22047       1.2465
+Beta0       0.38003      0.91995
+Beta1       0.27208      0.93712
+Beta2       0.60128       1.0601
+Beta3       0.42489       1.0650
+
+ [Covariance (Lower), Variance (Diagonal) and Correlation (Upper)]
+
+              sigma        Beta0        Beta1        Beta2        Beta3
+sigma    0.00034536    -0.043450     0.043348     0.015958   -0.0068105
+Beta0   -0.00019806     0.060164     -0.94942     -0.49078      0.33837
+Beta1    5.2804e-05    -0.015265    0.0042966      0.26895     -0.15925
+Beta2    1.6632e-05   -0.0067512   0.00098869    0.0031452     -0.95738
+Beta3   -1.5906e-05     0.010430   -0.0013118   -0.0067475     0.015793

@@ -1,0 +1,2962 @@
+%!PS-Adobe-2.0 EPSF-2.0
+%%BoundingBox: 0 0 432 288
+%%Creator: Ox (C) J.A. Doornik, 1994-2006.
+%%Pages: 0
+%%EndComments
+
+%functions
+/X    0 def
+/Y    0 def
+/Rot  0 def
+/tabX 0 def
+/tabW 0 def
+/colW 0 def
+/Slt      { Ltp 0 setdash Lwd setlinewidth } def
+/Solid    { [ ] 0 setdash Lwd setlinewidth } def
+/Mto      { /Y exch def /X exch def X Y moveto} def
+/Lto      { gsave dup 3 -1 roll dup 4 -1 roll newpath X Y moveto lineto stroke exch Mto grestore } def
+/mt       { moveto } def
+/lt       { lineto } def
+/Rt       { rmoveto currentpoint Mto} def
+/Rlt      { 2 copy currentpoint gsave newpath moveto rlineto stroke grestore Rt } def
+/BgnPath  { gsave newpath } def
+/EndPath  { stroke grestore} def
+/Width    { /H exch def /W exch def } def
+/SymBox   { newpath X Y moveto X W add Y lineto X W add Y H add lineto X Y H add lineto X Y lineto closepath } bind def
+/SymTriUp { newpath X Y moveto X W 2 div add Y H add lineto X W add Y lineto X Y lineto closepath } bind def
+/SymTri   { newpath X Y H add moveto X W 2 div add Y lineto X W add Y H add lineto X Y H add lineto closepath } bind def
+/SymTriUp { newpath X Y moveto X W 2 div add Y H add lineto X W add Y lineto X Y lineto closepath } bind def
+/SymCross { newpath X Y moveto X W add Y H add lineto X W add Y moveto X Y H add lineto closepath } bind def
+/SymPlus  { newpath X Y H 2 div add moveto X W add Y H 2 div add lineto X W 2 div add Y moveto X W 2 div add Y H add lineto closepath } bind def
+/SymDiam  { newpath X Y H 2 div add moveto X W 2 div add Y H add lineto X W add Y H 2 div add lineto  X W 2 div add Y lineto X Y H 2 div add lineto closepath } bind def
+/SymCirc  { 1 H W div scale newpath X W 2 div add Y H 2 div add W H div mul W 2 div 0 360 arc closepath } bind def
+/SymDash  { newpath X Y H 2 div add moveto X W add Y H 2 div add lineto closepath } bind def
+/FillStr  { closepath gsave FillColor fill grestore stroke grestore } def
+/Fill     { closepath FillColor fill grestore } def
+/FillBox  { gsave Width SymBox fill grestore } def
+/Box      { gsave Width SymBox Solid stroke grestore } def
+/Boxto    { currentpoint Mto Y sub exch X sub exch Box} def
+/FillBoxto{ currentpoint Mto Y sub exch X sub exch FillBox} def
+/Plus     { gsave Width SymPlus Solid stroke grestore } def
+/FillCir  { gsave Width SymCirc fill stroke grestore } def
+/Circle   { gsave Width SymCirc Solid stroke grestore } def
+/Dash     { gsave Width SymDash Solid stroke grestore } def
+/Cross    { gsave Width SymCross Solid stroke grestore } def
+/FillDiam { gsave Width SymDiam fill stroke grestore } def
+/Diam     { gsave Width SymDiam Solid stroke grestore } def
+/FillTri  { gsave Width SymTri  fill stroke grestore } def
+/Tri      { gsave Width SymTri  Solid stroke grestore } def
+/FillTriUp{ gsave Width SymTriUp fill stroke grestore } def
+/TriUp    { gsave Width SymTriUp Solid stroke grestore } def
+/Text     { gsave X Y moveto
+            Rot 360 eq {dup stringwidth pop neg 0 rmoveto}{Rot rotate} ifelse
+            show grestore
+          } def
+/T        { gsave
+            Rot 360 eq {dup stringwidth pop neg 0 rmoveto}{Rot rotate} ifelse
+            show Rot neg rotate currentpoint Mto grestore X Y moveto} def
+/tb0      { /tabX currentpoint pop def /tabW 0 def} def
+/tb1      { tabW currentpoint pop tabX sub gt {tabW}{currentpoint pop tabX sub} ifelse /tabW exch def } def
+/tb2      { /colW tabW def } def
+/tb3      { colW 0 rmoveto } def
+/A4       { /ptX 595.3 def /ptY 841.9 def } def
+/Letter   { /ptX 612 def /ptY 792 def } def
+/ISOLatin1{ findfont
+            dup length dict
+            begin { 1 index /FID ne {def}{pop pop} ifelse } forall
+              /Encoding ISOLatin1Encoding def
+              currentdict
+            end definefont pop } def
+/Font     { findfont exch scalefont setfont } def
+/FullPage { Landscape 1 eq { ptX ptY /ptX exch def /ptY exch def } if
+            ptX 1.5 div ptY le
+            {/ax ptX def /ay ptX 1.5 mul def}
+            {/ax ptY 1.5 div def /ay ptY def} ifelse
+            /ax ax 17000 div def ax ax scale
+            Landscape 1 eq { 90 rotate 0 ptY ax div neg translate } if
+            ptX ax div 15000 sub 2 div ptY ax div 10000 sub 2 div translate
+          } def
+/EpsPage  { 0.0288 0.0288 scale } def
+
+%lines
+/Linetype0 [ ] def  /Linewidth0 15 def
+/Linetype1 [ ] def  /Linewidth1 10 def
+/Linetype2 [ ] def  /Linewidth2 15 def
+/Linetype3 [ ] def  /Linewidth3 15 def
+/Linetype4 [ ] def  /Linewidth4 15 def
+/Linetype5 [35 35] def  /Linewidth5 15 def
+/Linetype6 [35 35] def  /Linewidth6 25 def
+/Linetype7 [35 35] def  /Linewidth7 35 def
+/Linetype8 [160 80] def  /Linewidth8 15 def
+/Linetype9 [160 80] def  /Linewidth9 25 def
+/Linetype10 [160 80] def  /Linewidth10 35 def
+/Linetype11 [ ] def  /Linewidth11 25 def
+/Linetype12 [ ] def  /Linewidth12 35 def
+/Linetype13 [ ] def  /Linewidth13 50 def
+/Linetype14 [ ] def  /Linewidth14 15 def
+/Linetype15 [ ] def  /Linewidth15 15 def
+
+%fonts
+/F0 /Times-Roman ISOLatin1
+/F1 /Symbol findfont definefont pop
+/F2 /Times-Bold ISOLatin1
+/F3 /Times-Italic ISOLatin1
+/F4 /Times-BoldItalic ISOLatin1
+/F5 /Helvetica ISOLatin1
+/F6 /Courier ISOLatin1
+/F7 /Times-Roman ISOLatin1
+/F8 /Times-Roman ISOLatin1
+/F9 /Times-Roman ISOLatin1
+
+%colors
+/BWG  16 array def
+/Gray 16 array def
+/RGB  16 array def
+% first set all to black
+0 1 15 { dup Gray exch 0 put RGB exch [0 0 0] put } for
+
+% color 0: white <-- background colour
+% color 1: black <-- foreground colour
+BWG  0 1.00 put  Gray  0 1.00 put  RGB  0 [1.00 1.00 1.00] put
+BWG  1 0.00 put  Gray  1 0.00 put  RGB  1 [0.00 0.00 0.00] put
+BWG  2 0.00 put  Gray  2 0.30 put  RGB  2 [1.00 0.00 0.00] put
+BWG  3 0.00 put  Gray  3 0.11 put  RGB  3 [0.00 0.00 1.00] put
+BWG  4 0.00 put  Gray  4 0.35 put  RGB  4 [0.00 0.50 0.50] put
+BWG  5 0.00 put  Gray  5 0.41 put  RGB  5 [1.00 0.00 1.00] put
+BWG  6 0.00 put  Gray  6 0.44 put  RGB  6 [0.00 0.75 0.00] put
+BWG  7 0.00 put  Gray  7 0.45 put  RGB  7 [0.50 0.50 0.00] put
+BWG  8 0.20 put  Gray  8 0.21 put  RGB  8 [0.50 0.00 0.50] put
+BWG  9 0.95 put  Gray  9 0.95 put  RGB  9 [1.00 1.00 0.50] put
+BWG 10 0.79 put  Gray 10 0.80 put  RGB 10 [0.50 1.00 0.50] put
+BWG 11 0.85 put  Gray 11 0.85 put  RGB 11 [0.50 1.00 1.00] put
+BWG 12 0.70 put  Gray 12 0.70 put  RGB 12 [0.00 1.00 1.00] put
+BWG 13 0.25 put  Gray 13 0.25 put  RGB 13 [0.25 0.25 0.25] put
+BWG 14 0.50 put  Gray 14 0.50 put  RGB 14 [0.50 0.50 0.50] put
+BWG 15 0.75 put  Gray 15 0.75 put  RGB 15 [0.75 0.75 0.75] put
+
+%choose a ColorModel: 0=black/white; 1=black/white/gray; 2=gray; 3=color
+/ColorModel 3 def
+
+/SetColor
+  { ColorModel 0 eq
+     { 0 eq {1 setgray}{0 setgray} ifelse }
+     { ColorModel 1 eq
+        { BWG exch get setgray}
+        { ColorModel 2 eq
+           { Gray exch get setgray}
+           { RGB exch get aload pop setrgbcolor} ifelse
+        } ifelse
+     } ifelse
+} def
+/FillColor
+  { ColorModel 3 eq
+     { setrgbcolor }
+     { add add 3 div setgray }
+     ifelse
+} def
+
+%init
+save
+1 setlinejoin
+280 /F0 Font
+10 setlinewidth
+/Ltp Linetype1 def
+/Lwd Linewidth1 def
+
+/User { /ptX 595 def /ptY 842 def} def
+%.PS uses full page printing
+%  select papersize: A4, Letter, User (in points: 72/inch)
+%  select orientation: 0 portrait mode, 1 landscape
+%  full page printing for .PS, else use EpsPage
+%.EPS defers scaling/rotation to document
+
+EpsPage
+%A4  /Landscape 1 def  FullPage
+
+%Graph start
+0 SetColor
+330 /F0 Font
+927 9096 Mto
+215 /F0 Font
+tb0
+927 9096 Mto
+2 SetColor
+/Ltp { Linetype2 } def /Lwd { Linewidth2 } def Slt
+71 71 Rt
+430 0 Rlt
+71 -71 Rt
+1 SetColor
+(ACF\255sigma )T
+tb1
+1499 8881 Mto
+tb2
+0 SetColor
+927 9096 Mto
+tb3
+0 -71 Rt
+927 9311 FillBoxto
+1 SetColor
+/Ltp { Linetype1 } def /Lwd { Linewidth1 } def Slt
+300 /F0 Font
+858 6880 Mto
+858 6940 Lto
+1583 6880 Mto
+1583 6940 Lto
+2308 6880 Mto
+2308 6940 Lto
+3033 6880 Mto
+3033 6940 Lto
+3758 6880 Mto
+3758 6940 Lto
+4483 6880 Mto
+4483 6940 Lto
+5208 6880 Mto
+5208 6940 Lto
+5933 6880 Mto
+5933 6940 Lto
+6658 6880 Mto
+6658 6940 Lto
+858 6880 Mto
+858 7000 Lto
+789 6580 Mto
+(0) T
+2308 6880 Mto
+2308 7000 Lto
+2169 6580 Mto
+(50)T
+3758 6880 Mto
+3758 7000 Lto
+3549 6580 Mto
+(100)T
+5208 6880 Mto
+5208 7000 Lto
+4999 6580 Mto
+(150)T
+6658 6880 Mto
+6658 7000 Lto
+6449 6580 Mto
+(200)T
+800 6880 Mto
+7180 6880 Lto
+14 SetColor
+/Ltp { Linetype14 } def /Lwd { Linewidth14 } def Slt
+800 8120 Mto
+7180 8120 Lto
+1 SetColor
+/Ltp { Linetype1 } def /Lwd { Linewidth1 } def Slt
+/Rot 360 def
+800 6880 Mto
+860 6880 Lto
+800 7127 Mto
+860 7127 Lto
+800 7375 Mto
+860 7375 Lto
+800 7623 Mto
+860 7623 Lto
+800 7871 Mto
+860 7871 Lto
+800 8120 Mto
+860 8120 Lto
+800 8368 Mto
+860 8368 Lto
+800 8616 Mto
+860 8616 Lto
+800 8864 Mto
+860 8864 Lto
+800 9112 Mto
+860 9112 Lto
+800 9360 Mto
+860 9360 Lto
+800 8120 Mto
+920 8120 Lto
+750 8020 Mto
+(0) T
+800 9360 Mto
+920 9360 Lto
+750 9260 Mto
+(1) T
+800 6880 Mto
+800 9360 Lto
+/Rot 0 def
+2 SetColor
+/Ltp { Linetype2 } def /Lwd { Linewidth2 } def Slt
+2 SetColor
+/Ltp { Linetype2 } def /Lwd { Linewidth2 } def Slt
+/Ltp { Linetype1 } def /Lwd { Linewidth1 } def Slt
+1 SetColor
+2 SetColor
+887 8120 Mto
+887 8149 Lto
+916 8120 Mto
+916 8121 Lto
+945 8120 Mto
+945 8123 Lto
+974 8120 Mto
+974 8118 Lto
+1003 8120 Mto
+1003 8131 Lto
+1032 8120 Mto
+1032 8137 Lto
+1061 8120 Mto
+1061 8095 Lto
+1090 8120 Mto
+1090 8092 Lto
+1119 8120 Mto
+1119 8123 Lto
+1148 8120 Mto
+1148 8102 Lto
+1177 8120 Mto
+1177 8106 Lto
+1206 8120 Mto
+1206 8165 Lto
+1235 8120 Mto
+1235 8121 Lto
+1264 8120 Mto
+1264 8133 Lto
+1293 8120 Mto
+1293 8143 Lto
+1322 8120 Mto
+1322 8140 Lto
+1351 8120 Mto
+1351 8121 Lto
+1380 8120 Mto
+1380 8150 Lto
+1409 8120 Mto
+1409 8129 Lto
+1438 8120 Mto
+1438 8126 Lto
+1467 8120 Mto
+1467 8144 Lto
+1496 8120 Mto
+1496 8137 Lto
+1525 8120 Mto
+1525 8116 Lto
+1554 8120 Mto
+1554 8145 Lto
+1583 8120 Mto
+1583 8139 Lto
+1612 8120 Mto
+1612 8110 Lto
+1641 8120 Mto
+1641 8101 Lto
+1670 8120 Mto
+1670 8136 Lto
+1699 8120 Mto
+1699 8133 Lto
+1728 8120 Mto
+1728 8119 Lto
+1757 8120 Mto
+1757 8090 Lto
+1786 8120 Mto
+1786 8077 Lto
+1815 8120 Mto
+1815 8131 Lto
+1844 8120 Mto
+1844 8100 Lto
+1873 8120 Mto
+1873 8108 Lto
+1902 8120 Mto
+1902 8109 Lto
+1931 8120 Mto
+1931 8131 Lto
+1960 8120 Mto
+1960 8091 Lto
+1989 8120 Mto
+1989 8129 Lto
+2018 8120 Mto
+2018 8141 Lto
+2047 8120 Mto
+2047 8139 Lto
+2076 8120 Mto
+2076 8131 Lto
+2105 8120 Mto
+2105 8123 Lto
+2134 8120 Mto
+2134 8123 Lto
+2163 8120 Mto
+2163 8138 Lto
+2192 8120 Mto
+2192 8120 Lto
+2221 8120 Mto
+2221 8128 Lto
+2250 8120 Mto
+2250 8106 Lto
+2279 8120 Mto
+2279 8139 Lto
+2308 8120 Mto
+2308 8115 Lto
+2337 8120 Mto
+2337 8135 Lto
+2366 8120 Mto
+2366 8096 Lto
+2395 8120 Mto
+2395 8111 Lto
+2424 8120 Mto
+2424 8135 Lto
+2453 8120 Mto
+2453 8124 Lto
+2482 8120 Mto
+2482 8124 Lto
+2511 8120 Mto
+2511 8125 Lto
+2540 8120 Mto
+2540 8125 Lto
+2569 8120 Mto
+2569 8156 Lto
+2598 8120 Mto
+2598 8118 Lto
+2627 8120 Mto
+2627 8124 Lto
+2656 8120 Mto
+2656 8105 Lto
+2685 8120 Mto
+2685 8104 Lto
+2714 8120 Mto
+2714 8085 Lto
+2743 8120 Mto
+2743 8116 Lto
+2772 8120 Mto
+2772 8091 Lto
+2801 8120 Mto
+2801 8102 Lto
+2830 8120 Mto
+2830 8112 Lto
+2859 8120 Mto
+2859 8120 Lto
+2888 8120 Mto
+2888 8112 Lto
+2917 8120 Mto
+2917 8132 Lto
+2946 8120 Mto
+2946 8138 Lto
+2975 8120 Mto
+2975 8099 Lto
+3004 8120 Mto
+3004 8144 Lto
+3033 8120 Mto
+3033 8108 Lto
+3062 8120 Mto
+3062 8110 Lto
+3091 8120 Mto
+3091 8139 Lto
+3120 8120 Mto
+3120 8097 Lto
+3149 8120 Mto
+3149 8131 Lto
+3178 8120 Mto
+3178 8122 Lto
+3207 8120 Mto
+3207 8098 Lto
+3236 8120 Mto
+3236 8119 Lto
+3265 8120 Mto
+3265 8124 Lto
+3294 8120 Mto
+3294 8134 Lto
+3323 8120 Mto
+3323 8102 Lto
+3352 8120 Mto
+3352 8112 Lto
+3381 8120 Mto
+3381 8099 Lto
+3410 8120 Mto
+3410 8098 Lto
+3439 8120 Mto
+3439 8102 Lto
+3468 8120 Mto
+3468 8109 Lto
+3497 8120 Mto
+3497 8139 Lto
+3526 8120 Mto
+3526 8107 Lto
+3555 8120 Mto
+3555 8066 Lto
+3584 8120 Mto
+3584 8112 Lto
+3613 8120 Mto
+3613 8142 Lto
+3642 8120 Mto
+3642 8111 Lto
+3671 8120 Mto
+3671 8134 Lto
+3700 8120 Mto
+3700 8133 Lto
+3729 8120 Mto
+3729 8100 Lto
+3758 8120 Mto
+3758 8137 Lto
+3787 8120 Mto
+3787 8147 Lto
+3816 8120 Mto
+3816 8130 Lto
+3845 8120 Mto
+3845 8130 Lto
+3874 8120 Mto
+3874 8104 Lto
+3903 8120 Mto
+3903 8119 Lto
+3932 8120 Mto
+3932 8126 Lto
+3961 8120 Mto
+3961 8142 Lto
+3990 8120 Mto
+3990 8119 Lto
+4019 8120 Mto
+4019 8131 Lto
+4048 8120 Mto
+4048 8122 Lto
+4077 8120 Mto
+4077 8109 Lto
+4106 8120 Mto
+4106 8108 Lto
+4135 8120 Mto
+4135 8107 Lto
+4164 8120 Mto
+4164 8126 Lto
+4193 8120 Mto
+4193 8117 Lto
+4222 8120 Mto
+4222 8109 Lto
+4251 8120 Mto
+4251 8098 Lto
+4280 8120 Mto
+4280 8117 Lto
+4309 8120 Mto
+4309 8114 Lto
+4338 8120 Mto
+4338 8123 Lto
+4367 8120 Mto
+4367 8140 Lto
+4396 8120 Mto
+4396 8135 Lto
+4425 8120 Mto
+4425 8130 Lto
+4454 8120 Mto
+4454 8139 Lto
+4483 8120 Mto
+4483 8156 Lto
+4512 8120 Mto
+4512 8144 Lto
+4541 8120 Mto
+4541 8110 Lto
+4570 8120 Mto
+4570 8094 Lto
+4599 8120 Mto
+4599 8131 Lto
+4628 8120 Mto
+4628 8122 Lto
+4657 8120 Mto
+4657 8135 Lto
+4686 8120 Mto
+4686 8150 Lto
+4715 8120 Mto
+4715 8116 Lto
+4744 8120 Mto
+4744 8103 Lto
+4773 8120 Mto
+4773 8124 Lto
+4802 8120 Mto
+4802 8121 Lto
+4831 8120 Mto
+4831 8157 Lto
+4860 8120 Mto
+4860 8144 Lto
+4889 8120 Mto
+4889 8134 Lto
+4918 8120 Mto
+4918 8108 Lto
+4947 8120 Mto
+4947 8132 Lto
+4976 8120 Mto
+4976 8120 Lto
+5005 8120 Mto
+5005 8132 Lto
+5034 8120 Mto
+5034 8116 Lto
+5063 8120 Mto
+5063 8119 Lto
+5092 8120 Mto
+5092 8120 Lto
+5121 8120 Mto
+5121 8136 Lto
+5150 8120 Mto
+5150 8135 Lto
+5179 8120 Mto
+5179 8155 Lto
+5208 8120 Mto
+5208 8164 Lto
+5237 8120 Mto
+5237 8135 Lto
+5266 8120 Mto
+5266 8148 Lto
+5295 8120 Mto
+5295 8106 Lto
+5324 8120 Mto
+5324 8123 Lto
+5353 8120 Mto
+5353 8137 Lto
+5382 8120 Mto
+5382 8121 Lto
+5411 8120 Mto
+5411 8136 Lto
+5440 8120 Mto
+5440 8115 Lto
+5469 8120 Mto
+5469 8100 Lto
+5498 8120 Mto
+5498 8127 Lto
+5527 8120 Mto
+5527 8131 Lto
+5556 8120 Mto
+5556 8136 Lto
+5585 8120 Mto
+5585 8104 Lto
+5614 8120 Mto
+5614 8120 Lto
+5643 8120 Mto
+5643 8150 Lto
+5672 8120 Mto
+5672 8143 Lto
+5701 8120 Mto
+5701 8122 Lto
+5730 8120 Mto
+5730 8079 Lto
+5759 8120 Mto
+5759 8113 Lto
+5788 8120 Mto
+5788 8110 Lto
+5817 8120 Mto
+5817 8133 Lto
+5846 8120 Mto
+5846 8147 Lto
+5875 8120 Mto
+5875 8127 Lto
+5904 8120 Mto
+5904 8159 Lto
+5933 8120 Mto
+5933 8127 Lto
+5962 8120 Mto
+5962 8108 Lto
+5991 8120 Mto
+5991 8096 Lto
+6020 8120 Mto
+6020 8129 Lto
+6049 8120 Mto
+6049 8139 Lto
+6078 8120 Mto
+6078 8116 Lto
+6107 8120 Mto
+6107 8125 Lto
+6136 8120 Mto
+6136 8114 Lto
+6165 8120 Mto
+6165 8161 Lto
+6194 8120 Mto
+6194 8132 Lto
+6223 8120 Mto
+6223 8108 Lto
+6252 8120 Mto
+6252 8122 Lto
+6281 8120 Mto
+6281 8100 Lto
+6310 8120 Mto
+6310 8119 Lto
+6339 8120 Mto
+6339 8123 Lto
+6368 8120 Mto
+6368 8157 Lto
+6397 8120 Mto
+6397 8116 Lto
+6426 8120 Mto
+6426 8103 Lto
+6455 8120 Mto
+6455 8120 Lto
+6484 8120 Mto
+6484 8102 Lto
+6513 8120 Mto
+6513 8140 Lto
+6542 8120 Mto
+6542 8126 Lto
+6571 8120 Mto
+6571 8137 Lto
+6600 8120 Mto
+6600 8119 Lto
+6629 8120 Mto
+6629 8115 Lto
+6658 8120 Mto
+6658 8119 Lto
+6687 8120 Mto
+6687 8088 Lto
+6716 8120 Mto
+6716 8146 Lto
+6745 8120 Mto
+6745 8118 Lto
+6774 8120 Mto
+6774 8111 Lto
+6803 8120 Mto
+6803 8089 Lto
+6832 8120 Mto
+6832 8120 Lto
+6861 8120 Mto
+6861 8097 Lto
+6890 8120 Mto
+6890 8130 Lto
+6919 8120 Mto
+6919 8162 Lto
+6948 8120 Mto
+6948 8129 Lto
+6977 8120 Mto
+6977 8140 Lto
+7006 8120 Mto
+7006 8091 Lto
+7035 8120 Mto
+7035 8123 Lto
+927 9096 Mto
+215 /F0 Font
+tb0
+927 9096 Mto
+2 SetColor
+/Ltp { Linetype2 } def /Lwd { Linewidth2 } def Slt
+71 71 Rt
+430 0 Rlt
+71 -71 Rt
+1 SetColor
+(ACF\255sigma )T
+tb1
+1499 8881 Mto
+tb2
+1 SetColor
+/Ltp { Linetype1 } def /Lwd { Linewidth1 } def Slt
+927 9096 Mto
+tb3
+0 -71 Rt
+927 9311 Boxto
+330 /F0 Font
+8107 9096 Mto
+215 /F0 Font
+tb0
+8107 9096 Mto
+2 SetColor
+/Ltp { Linetype2 } def /Lwd { Linewidth2 } def Slt
+71 71 Rt
+430 0 Rlt
+71 -71 Rt
+1 SetColor
+(ACF\255Beta0 )T
+tb1
+8679 8881 Mto
+tb2
+0 SetColor
+8107 9096 Mto
+tb3
+0 -71 Rt
+8107 9311 FillBoxto
+1 SetColor
+/Ltp { Linetype1 } def /Lwd { Linewidth1 } def Slt
+300 /F0 Font
+8038 6880 Mto
+8038 6940 Lto
+8763 6880 Mto
+8763 6940 Lto
+9488 6880 Mto
+9488 6940 Lto
+10213 6880 Mto
+10213 6940 Lto
+10938 6880 Mto
+10938 6940 Lto
+11663 6880 Mto
+11663 6940 Lto
+12388 6880 Mto
+12388 6940 Lto
+13113 6880 Mto
+13113 6940 Lto
+13838 6880 Mto
+13838 6940 Lto
+8038 6880 Mto
+8038 7000 Lto
+7969 6580 Mto
+(0) T
+9488 6880 Mto
+9488 7000 Lto
+9349 6580 Mto
+(50)T
+10938 6880 Mto
+10938 7000 Lto
+10729 6580 Mto
+(100)T
+12388 6880 Mto
+12388 7000 Lto
+12179 6580 Mto
+(150)T
+13838 6880 Mto
+13838 7000 Lto
+13629 6580 Mto
+(200)T
+7980 6880 Mto
+14360 6880 Lto
+14 SetColor
+/Ltp { Linetype14 } def /Lwd { Linewidth14 } def Slt
+7980 8120 Mto
+14360 8120 Lto
+1 SetColor
+/Ltp { Linetype1 } def /Lwd { Linewidth1 } def Slt
+/Rot 360 def
+7980 6880 Mto
+8040 6880 Lto
+7980 7127 Mto
+8040 7127 Lto
+7980 7375 Mto
+8040 7375 Lto
+7980 7623 Mto
+8040 7623 Lto
+7980 7871 Mto
+8040 7871 Lto
+7980 8120 Mto
+8040 8120 Lto
+7980 8368 Mto
+8040 8368 Lto
+7980 8616 Mto
+8040 8616 Lto
+7980 8864 Mto
+8040 8864 Lto
+7980 9112 Mto
+8040 9112 Lto
+7980 9360 Mto
+8040 9360 Lto
+7980 8120 Mto
+8100 8120 Lto
+7930 8020 Mto
+(0) T
+7980 9360 Mto
+8100 9360 Lto
+7930 9260 Mto
+(1) T
+7980 6880 Mto
+7980 9360 Lto
+/Rot 0 def
+2 SetColor
+/Ltp { Linetype2 } def /Lwd { Linewidth2 } def Slt
+2 SetColor
+/Ltp { Linetype2 } def /Lwd { Linewidth2 } def Slt
+/Ltp { Linetype1 } def /Lwd { Linewidth1 } def Slt
+1 SetColor
+2 SetColor
+8067 8120 Mto
+8067 8116 Lto
+8096 8120 Mto
+8096 8128 Lto
+8125 8120 Mto
+8125 8094 Lto
+8154 8120 Mto
+8154 8120 Lto
+8183 8120 Mto
+8183 8135 Lto
+8212 8120 Mto
+8212 8103 Lto
+8241 8120 Mto
+8241 8083 Lto
+8270 8120 Mto
+8270 8126 Lto
+8299 8120 Mto
+8299 8104 Lto
+8328 8120 Mto
+8328 8136 Lto
+8357 8120 Mto
+8357 8128 Lto
+8386 8120 Mto
+8386 8105 Lto
+8415 8120 Mto
+8415 8106 Lto
+8444 8120 Mto
+8444 8116 Lto
+8473 8120 Mto
+8473 8113 Lto
+8502 8120 Mto
+8502 8134 Lto
+8531 8120 Mto
+8531 8111 Lto
+8560 8120 Mto
+8560 8127 Lto
+8589 8120 Mto
+8589 8109 Lto
+8618 8120 Mto
+8618 8150 Lto
+8647 8120 Mto
+8647 8108 Lto
+8676 8120 Mto
+8676 8146 Lto
+8705 8120 Mto
+8705 8117 Lto
+8734 8120 Mto
+8734 8128 Lto
+8763 8120 Mto
+8763 8128 Lto
+8792 8120 Mto
+8792 8122 Lto
+8821 8120 Mto
+8821 8097 Lto
+8850 8120 Mto
+8850 8132 Lto
+8879 8120 Mto
+8879 8107 Lto
+8908 8120 Mto
+8908 8115 Lto
+8937 8120 Mto
+8937 8132 Lto
+8966 8120 Mto
+8966 8098 Lto
+8995 8120 Mto
+8995 8101 Lto
+9024 8120 Mto
+9024 8100 Lto
+9053 8120 Mto
+9053 8116 Lto
+9082 8120 Mto
+9082 8129 Lto
+9111 8120 Mto
+9111 8126 Lto
+9140 8120 Mto
+9140 8138 Lto
+9169 8120 Mto
+9169 8126 Lto
+9198 8120 Mto
+9198 8129 Lto
+9227 8120 Mto
+9227 8112 Lto
+9256 8120 Mto
+9256 8127 Lto
+9285 8120 Mto
+9285 8115 Lto
+9314 8120 Mto
+9314 8122 Lto
+9343 8120 Mto
+9343 8101 Lto
+9372 8120 Mto
+9372 8123 Lto
+9401 8120 Mto
+9401 8135 Lto
+9430 8120 Mto
+9430 8124 Lto
+9459 8120 Mto
+9459 8110 Lto
+9488 8120 Mto
+9488 8106 Lto
+9517 8120 Mto
+9517 8121 Lto
+9546 8120 Mto
+9546 8146 Lto
+9575 8120 Mto
+9575 8137 Lto
+9604 8120 Mto
+9604 8095 Lto
+9633 8120 Mto
+9633 8111 Lto
+9662 8120 Mto
+9662 8104 Lto
+9691 8120 Mto
+9691 8122 Lto
+9720 8120 Mto
+9720 8113 Lto
+9749 8120 Mto
+9749 8155 Lto
+9778 8120 Mto
+9778 8110 Lto
+9807 8120 Mto
+9807 8121 Lto
+9836 8120 Mto
+9836 8099 Lto
+9865 8120 Mto
+9865 8140 Lto
+9894 8120 Mto
+9894 8129 Lto
+9923 8120 Mto
+9923 8110 Lto
+9952 8120 Mto
+9952 8143 Lto
+9981 8120 Mto
+9981 8112 Lto
+10010 8120 Mto
+10010 8126 Lto
+10039 8120 Mto
+10039 8110 Lto
+10068 8120 Mto
+10068 8141 Lto
+10097 8120 Mto
+10097 8116 Lto
+10126 8120 Mto
+10126 8097 Lto
+10155 8120 Mto
+10155 8111 Lto
+10184 8120 Mto
+10184 8133 Lto
+10213 8120 Mto
+10213 8124 Lto
+10242 8120 Mto
+10242 8117 Lto
+10271 8120 Mto
+10271 8126 Lto
+10300 8120 Mto
+10300 8131 Lto
+10329 8120 Mto
+10329 8136 Lto
+10358 8120 Mto
+10358 8091 Lto
+10387 8120 Mto
+10387 8119 Lto
+10416 8120 Mto
+10416 8128 Lto
+10445 8120 Mto
+10445 8098 Lto
+10474 8120 Mto
+10474 8092 Lto
+10503 8120 Mto
+10503 8125 Lto
+10532 8120 Mto
+10532 8124 Lto
+10561 8120 Mto
+10561 8115 Lto
+10590 8120 Mto
+10590 8117 Lto
+10619 8120 Mto
+10619 8134 Lto
+10648 8120 Mto
+10648 8102 Lto
+10677 8120 Mto
+10677 8113 Lto
+10706 8120 Mto
+10706 8116 Lto
+10735 8120 Mto
+10735 8124 Lto
+10764 8120 Mto
+10764 8120 Lto
+10793 8120 Mto
+10793 8109 Lto
+10822 8120 Mto
+10822 8111 Lto
+10851 8120 Mto
+10851 8129 Lto
+10880 8120 Mto
+10880 8091 Lto
+10909 8120 Mto
+10909 8116 Lto
+10938 8120 Mto
+10938 8086 Lto
+10967 8120 Mto
+10967 8135 Lto
+10996 8120 Mto
+10996 8103 Lto
+11025 8120 Mto
+11025 8120 Lto
+11054 8120 Mto
+11054 8140 Lto
+11083 8120 Mto
+11083 8117 Lto
+11112 8120 Mto
+11112 8137 Lto
+11141 8120 Mto
+11141 8158 Lto
+11170 8120 Mto
+11170 8074 Lto
+11199 8120 Mto
+11199 8127 Lto
+11228 8120 Mto
+11228 8084 Lto
+11257 8120 Mto
+11257 8121 Lto
+11286 8120 Mto
+11286 8174 Lto
+11315 8120 Mto
+11315 8118 Lto
+11344 8120 Mto
+11344 8133 Lto
+11373 8120 Mto
+11373 8130 Lto
+11402 8120 Mto
+11402 8141 Lto
+11431 8120 Mto
+11431 8117 Lto
+11460 8120 Mto
+11460 8119 Lto
+11489 8120 Mto
+11489 8106 Lto
+11518 8120 Mto
+11518 8136 Lto
+11547 8120 Mto
+11547 8157 Lto
+11576 8120 Mto
+11576 8107 Lto
+11605 8120 Mto
+11605 8115 Lto
+11634 8120 Mto
+11634 8152 Lto
+11663 8120 Mto
+11663 8135 Lto
+11692 8120 Mto
+11692 8091 Lto
+11721 8120 Mto
+11721 8148 Lto
+11750 8120 Mto
+11750 8115 Lto
+11779 8120 Mto
+11779 8133 Lto
+11808 8120 Mto
+11808 8103 Lto
+11837 8120 Mto
+11837 8130 Lto
+11866 8120 Mto
+11866 8119 Lto
+11895 8120 Mto
+11895 8121 Lto
+11924 8120 Mto
+11924 8122 Lto
+11953 8120 Mto
+11953 8095 Lto
+11982 8120 Mto
+11982 8128 Lto
+12011 8120 Mto
+12011 8133 Lto
+12040 8120 Mto
+12040 8135 Lto
+12069 8120 Mto
+12069 8100 Lto
+12098 8120 Mto
+12098 8115 Lto
+12127 8120 Mto
+12127 8102 Lto
+12156 8120 Mto
+12156 8124 Lto
+12185 8120 Mto
+12185 8120 Lto
+12214 8120 Mto
+12214 8121 Lto
+12243 8120 Mto
+12243 8146 Lto
+12272 8120 Mto
+12272 8121 Lto
+12301 8120 Mto
+12301 8124 Lto
+12330 8120 Mto
+12330 8088 Lto
+12359 8120 Mto
+12359 8114 Lto
+12388 8120 Mto
+12388 8111 Lto
+12417 8120 Mto
+12417 8119 Lto
+12446 8120 Mto
+12446 8122 Lto
+12475 8120 Mto
+12475 8132 Lto
+12504 8120 Mto
+12504 8114 Lto
+12533 8120 Mto
+12533 8128 Lto
+12562 8120 Mto
+12562 8120 Lto
+12591 8120 Mto
+12591 8103 Lto
+12620 8120 Mto
+12620 8108 Lto
+12649 8120 Mto
+12649 8100 Lto
+12678 8120 Mto
+12678 8074 Lto
+12707 8120 Mto
+12707 8092 Lto
+12736 8120 Mto
+12736 8105 Lto
+12765 8120 Mto
+12765 8113 Lto
+12794 8120 Mto
+12794 8130 Lto
+12823 8120 Mto
+12823 8130 Lto
+12852 8120 Mto
+12852 8096 Lto
+12881 8120 Mto
+12881 8128 Lto
+12910 8120 Mto
+12910 8142 Lto
+12939 8120 Mto
+12939 8144 Lto
+12968 8120 Mto
+12968 8127 Lto
+12997 8120 Mto
+12997 8136 Lto
+13026 8120 Mto
+13026 8070 Lto
+13055 8120 Mto
+13055 8127 Lto
+13084 8120 Mto
+13084 8109 Lto
+13113 8120 Mto
+13113 8147 Lto
+13142 8120 Mto
+13142 8109 Lto
+13171 8120 Mto
+13171 8097 Lto
+13200 8120 Mto
+13200 8138 Lto
+13229 8120 Mto
+13229 8109 Lto
+13258 8120 Mto
+13258 8149 Lto
+13287 8120 Mto
+13287 8150 Lto
+13316 8120 Mto
+13316 8101 Lto
+13345 8120 Mto
+13345 8113 Lto
+13374 8120 Mto
+13374 8142 Lto
+13403 8120 Mto
+13403 8117 Lto
+13432 8120 Mto
+13432 8149 Lto
+13461 8120 Mto
+13461 8130 Lto
+13490 8120 Mto
+13490 8122 Lto
+13519 8120 Mto
+13519 8136 Lto
+13548 8120 Mto
+13548 8109 Lto
+13577 8120 Mto
+13577 8137 Lto
+13606 8120 Mto
+13606 8123 Lto
+13635 8120 Mto
+13635 8109 Lto
+13664 8120 Mto
+13664 8133 Lto
+13693 8120 Mto
+13693 8122 Lto
+13722 8120 Mto
+13722 8133 Lto
+13751 8120 Mto
+13751 8116 Lto
+13780 8120 Mto
+13780 8113 Lto
+13809 8120 Mto
+13809 8116 Lto
+13838 8120 Mto
+13838 8120 Lto
+13867 8120 Mto
+13867 8114 Lto
+13896 8120 Mto
+13896 8105 Lto
+13925 8120 Mto
+13925 8123 Lto
+13954 8120 Mto
+13954 8115 Lto
+13983 8120 Mto
+13983 8110 Lto
+14012 8120 Mto
+14012 8143 Lto
+14041 8120 Mto
+14041 8111 Lto
+14070 8120 Mto
+14070 8097 Lto
+14099 8120 Mto
+14099 8125 Lto
+14128 8120 Mto
+14128 8111 Lto
+14157 8120 Mto
+14157 8111 Lto
+14186 8120 Mto
+14186 8123 Lto
+14215 8120 Mto
+14215 8120 Lto
+8107 9096 Mto
+215 /F0 Font
+tb0
+8107 9096 Mto
+2 SetColor
+/Ltp { Linetype2 } def /Lwd { Linewidth2 } def Slt
+71 71 Rt
+430 0 Rlt
+71 -71 Rt
+1 SetColor
+(ACF\255Beta0 )T
+tb1
+8679 8881 Mto
+tb2
+1 SetColor
+/Ltp { Linetype1 } def /Lwd { Linewidth1 } def Slt
+8107 9096 Mto
+tb3
+0 -71 Rt
+8107 9311 Boxto
+330 /F0 Font
+927 5976 Mto
+215 /F0 Font
+tb0
+927 5976 Mto
+2 SetColor
+/Ltp { Linetype2 } def /Lwd { Linewidth2 } def Slt
+71 71 Rt
+430 0 Rlt
+71 -71 Rt
+1 SetColor
+(ACF\255Beta1 )T
+tb1
+1499 5761 Mto
+tb2
+0 SetColor
+927 5976 Mto
+tb3
+0 -71 Rt
+927 6191 FillBoxto
+1 SetColor
+/Ltp { Linetype1 } def /Lwd { Linewidth1 } def Slt
+300 /F0 Font
+858 3760 Mto
+858 3820 Lto
+1583 3760 Mto
+1583 3820 Lto
+2308 3760 Mto
+2308 3820 Lto
+3033 3760 Mto
+3033 3820 Lto
+3758 3760 Mto
+3758 3820 Lto
+4483 3760 Mto
+4483 3820 Lto
+5208 3760 Mto
+5208 3820 Lto
+5933 3760 Mto
+5933 3820 Lto
+6658 3760 Mto
+6658 3820 Lto
+858 3760 Mto
+858 3880 Lto
+789 3460 Mto
+(0) T
+2308 3760 Mto
+2308 3880 Lto
+2169 3460 Mto
+(50)T
+3758 3760 Mto
+3758 3880 Lto
+3549 3460 Mto
+(100)T
+5208 3760 Mto
+5208 3880 Lto
+4999 3460 Mto
+(150)T
+6658 3760 Mto
+6658 3880 Lto
+6449 3460 Mto
+(200)T
+800 3760 Mto
+7180 3760 Lto
+14 SetColor
+/Ltp { Linetype14 } def /Lwd { Linewidth14 } def Slt
+800 5000 Mto
+7180 5000 Lto
+1 SetColor
+/Ltp { Linetype1 } def /Lwd { Linewidth1 } def Slt
+/Rot 360 def
+800 3760 Mto
+860 3760 Lto
+800 4007 Mto
+860 4007 Lto
+800 4255 Mto
+860 4255 Lto
+800 4503 Mto
+860 4503 Lto
+800 4751 Mto
+860 4751 Lto
+800 5000 Mto
+860 5000 Lto
+800 5248 Mto
+860 5248 Lto
+800 5496 Mto
+860 5496 Lto
+800 5744 Mto
+860 5744 Lto
+800 5992 Mto
+860 5992 Lto
+800 6240 Mto
+860 6240 Lto
+800 5000 Mto
+920 5000 Lto
+750 4900 Mto
+(0) T
+800 6240 Mto
+920 6240 Lto
+750 6140 Mto
+(1) T
+800 3760 Mto
+800 6240 Lto
+/Rot 0 def
+2 SetColor
+/Ltp { Linetype2 } def /Lwd { Linewidth2 } def Slt
+2 SetColor
+/Ltp { Linetype2 } def /Lwd { Linewidth2 } def Slt
+/Ltp { Linetype1 } def /Lwd { Linewidth1 } def Slt
+1 SetColor
+2 SetColor
+887 5000 Mto
+887 5009 Lto
+916 5000 Mto
+916 5003 Lto
+945 5000 Mto
+945 4982 Lto
+974 5000 Mto
+974 4991 Lto
+1003 5000 Mto
+1003 5019 Lto
+1032 5000 Mto
+1032 4991 Lto
+1061 5000 Mto
+1061 4966 Lto
+1090 5000 Mto
+1090 5007 Lto
+1119 5000 Mto
+1119 4986 Lto
+1148 5000 Mto
+1148 5015 Lto
+1177 5000 Mto
+1177 5004 Lto
+1206 5000 Mto
+1206 4983 Lto
+1235 5000 Mto
+1235 4988 Lto
+1264 5000 Mto
+1264 4995 Lto
+1293 5000 Mto
+1293 4993 Lto
+1322 5000 Mto
+1322 5008 Lto
+1351 5000 Mto
+1351 4991 Lto
+1380 5000 Mto
+1380 5002 Lto
+1409 5000 Mto
+1409 4991 Lto
+1438 5000 Mto
+1438 5020 Lto
+1467 5000 Mto
+1467 4999 Lto
+1496 5000 Mto
+1496 5045 Lto
+1525 5000 Mto
+1525 4992 Lto
+1554 5000 Mto
+1554 5007 Lto
+1583 5000 Mto
+1583 5017 Lto
+1612 5000 Mto
+1612 5009 Lto
+1641 5000 Mto
+1641 4984 Lto
+1670 5000 Mto
+1670 5004 Lto
+1699 5000 Mto
+1699 4980 Lto
+1728 5000 Mto
+1728 4995 Lto
+1757 5000 Mto
+1757 5001 Lto
+1786 5000 Mto
+1786 4963 Lto
+1815 5000 Mto
+1815 4992 Lto
+1844 5000 Mto
+1844 4975 Lto
+1873 5000 Mto
+1873 4986 Lto
+1902 5000 Mto
+1902 5002 Lto
+1931 5000 Mto
+1931 5006 Lto
+1960 5000 Mto
+1960 5012 Lto
+1989 5000 Mto
+1989 5012 Lto
+2018 5000 Mto
+2018 5004 Lto
+2047 5000 Mto
+2047 5012 Lto
+2076 5000 Mto
+2076 4991 Lto
+2105 5000 Mto
+2105 5003 Lto
+2134 5000 Mto
+2134 5005 Lto
+2163 5000 Mto
+2163 4995 Lto
+2192 5000 Mto
+2192 5004 Lto
+2221 5000 Mto
+2221 5016 Lto
+2250 5000 Mto
+2250 5015 Lto
+2279 5000 Mto
+2279 4992 Lto
+2308 5000 Mto
+2308 4992 Lto
+2337 5000 Mto
+2337 5013 Lto
+2366 5000 Mto
+2366 5013 Lto
+2395 5000 Mto
+2395 5014 Lto
+2424 5000 Mto
+2424 4962 Lto
+2453 5000 Mto
+2453 4984 Lto
+2482 5000 Mto
+2482 4981 Lto
+2511 5000 Mto
+2511 4990 Lto
+2540 5000 Mto
+2540 4995 Lto
+2569 5000 Mto
+2569 5025 Lto
+2598 5000 Mto
+2598 4995 Lto
+2627 5000 Mto
+2627 5001 Lto
+2656 5000 Mto
+2656 4975 Lto
+2685 5000 Mto
+2685 5027 Lto
+2714 5000 Mto
+2714 5005 Lto
+2743 5000 Mto
+2743 4987 Lto
+2772 5000 Mto
+2772 5022 Lto
+2801 5000 Mto
+2801 4990 Lto
+2830 5000 Mto
+2830 5008 Lto
+2859 5000 Mto
+2859 4980 Lto
+2888 5000 Mto
+2888 5012 Lto
+2917 5000 Mto
+2917 5007 Lto
+2946 5000 Mto
+2946 4971 Lto
+2975 5000 Mto
+2975 4994 Lto
+3004 5000 Mto
+3004 5012 Lto
+3033 5000 Mto
+3033 5002 Lto
+3062 5000 Mto
+3062 5009 Lto
+3091 5000 Mto
+3091 4999 Lto
+3120 5000 Mto
+3120 5011 Lto
+3149 5000 Mto
+3149 5013 Lto
+3178 5000 Mto
+3178 4978 Lto
+3207 5000 Mto
+3207 5004 Lto
+3236 5000 Mto
+3236 5006 Lto
+3265 5000 Mto
+3265 4983 Lto
+3294 5000 Mto
+3294 4985 Lto
+3323 5000 Mto
+3323 5014 Lto
+3352 5000 Mto
+3352 5006 Lto
+3381 5000 Mto
+3381 4987 Lto
+3410 5000 Mto
+3410 4998 Lto
+3439 5000 Mto
+3439 5008 Lto
+3468 5000 Mto
+3468 4980 Lto
+3497 5000 Mto
+3497 4996 Lto
+3526 5000 Mto
+3526 4988 Lto
+3555 5000 Mto
+3555 5004 Lto
+3584 5000 Mto
+3584 4999 Lto
+3613 5000 Mto
+3613 4975 Lto
+3642 5000 Mto
+3642 4988 Lto
+3671 5000 Mto
+3671 5011 Lto
+3700 5000 Mto
+3700 4967 Lto
+3729 5000 Mto
+3729 4994 Lto
+3758 5000 Mto
+3758 4965 Lto
+3787 5000 Mto
+3787 5010 Lto
+3816 5000 Mto
+3816 4991 Lto
+3845 5000 Mto
+3845 4996 Lto
+3874 5000 Mto
+3874 5026 Lto
+3903 5000 Mto
+3903 4991 Lto
+3932 5000 Mto
+3932 5030 Lto
+3961 5000 Mto
+3961 5038 Lto
+3990 5000 Mto
+3990 4955 Lto
+4019 5000 Mto
+4019 5001 Lto
+4048 5000 Mto
+4048 4956 Lto
+4077 5000 Mto
+4077 4998 Lto
+4106 5000 Mto
+4106 5042 Lto
+4135 5000 Mto
+4135 4994 Lto
+4164 5000 Mto
+4164 5007 Lto
+4193 5000 Mto
+4193 5016 Lto
+4222 5000 Mto
+4222 5010 Lto
+4251 5000 Mto
+4251 4999 Lto
+4280 5000 Mto
+4280 4994 Lto
+4309 5000 Mto
+4309 4981 Lto
+4338 5000 Mto
+4338 5011 Lto
+4367 5000 Mto
+4367 5031 Lto
+4396 5000 Mto
+4396 4995 Lto
+4425 5000 Mto
+4425 4997 Lto
+4454 5000 Mto
+4454 5013 Lto
+4483 5000 Mto
+4483 5015 Lto
+4512 5000 Mto
+4512 4973 Lto
+4541 5000 Mto
+4541 5036 Lto
+4570 5000 Mto
+4570 5006 Lto
+4599 5000 Mto
+4599 5008 Lto
+4628 5000 Mto
+4628 4987 Lto
+4657 5000 Mto
+4657 5009 Lto
+4686 5000 Mto
+4686 5001 Lto
+4715 5000 Mto
+4715 4993 Lto
+4744 5000 Mto
+4744 5011 Lto
+4773 5000 Mto
+4773 4980 Lto
+4802 5000 Mto
+4802 5011 Lto
+4831 5000 Mto
+4831 5014 Lto
+4860 5000 Mto
+4860 5017 Lto
+4889 5000 Mto
+4889 4980 Lto
+4918 5000 Mto
+4918 4980 Lto
+4947 5000 Mto
+4947 4985 Lto
+4976 5000 Mto
+4976 5014 Lto
+5005 5000 Mto
+5005 5002 Lto
+5034 5000 Mto
+5034 4991 Lto
+5063 5000 Mto
+5063 5034 Lto
+5092 5000 Mto
+5092 4995 Lto
+5121 5000 Mto
+5121 4997 Lto
+5150 5000 Mto
+5150 4989 Lto
+5179 5000 Mto
+5179 5000 Lto
+5208 5000 Mto
+5208 5002 Lto
+5237 5000 Mto
+5237 5004 Lto
+5266 5000 Mto
+5266 4998 Lto
+5295 5000 Mto
+5295 5007 Lto
+5324 5000 Mto
+5324 4992 Lto
+5353 5000 Mto
+5353 5009 Lto
+5382 5000 Mto
+5382 5004 Lto
+5411 5000 Mto
+5411 4993 Lto
+5440 5000 Mto
+5440 4985 Lto
+5469 5000 Mto
+5469 4986 Lto
+5498 5000 Mto
+5498 4960 Lto
+5527 5000 Mto
+5527 4979 Lto
+5556 5000 Mto
+5556 4993 Lto
+5585 5000 Mto
+5585 4998 Lto
+5614 5000 Mto
+5614 4998 Lto
+5643 5000 Mto
+5643 5025 Lto
+5672 5000 Mto
+5672 4980 Lto
+5701 5000 Mto
+5701 5026 Lto
+5730 5000 Mto
+5730 5019 Lto
+5759 5000 Mto
+5759 5010 Lto
+5788 5000 Mto
+5788 5021 Lto
+5817 5000 Mto
+5817 5019 Lto
+5846 5000 Mto
+5846 4967 Lto
+5875 5000 Mto
+5875 5005 Lto
+5904 5000 Mto
+5904 4990 Lto
+5933 5000 Mto
+5933 5029 Lto
+5962 5000 Mto
+5962 4989 Lto
+5991 5000 Mto
+5991 4965 Lto
+6020 5000 Mto
+6020 5013 Lto
+6049 5000 Mto
+6049 4991 Lto
+6078 5000 Mto
+6078 5017 Lto
+6107 5000 Mto
+6107 5036 Lto
+6136 5000 Mto
+6136 4987 Lto
+6165 5000 Mto
+6165 4994 Lto
+6194 5000 Mto
+6194 5007 Lto
+6223 5000 Mto
+6223 4995 Lto
+6252 5000 Mto
+6252 5027 Lto
+6281 5000 Mto
+6281 5011 Lto
+6310 5000 Mto
+6310 5010 Lto
+6339 5000 Mto
+6339 5023 Lto
+6368 5000 Mto
+6368 4982 Lto
+6397 5000 Mto
+6397 5015 Lto
+6426 5000 Mto
+6426 5006 Lto
+6455 5000 Mto
+6455 4979 Lto
+6484 5000 Mto
+6484 5012 Lto
+6513 5000 Mto
+6513 5002 Lto
+6542 5000 Mto
+6542 5013 Lto
+6571 5000 Mto
+6571 4992 Lto
+6600 5000 Mto
+6600 4990 Lto
+6629 5000 Mto
+6629 4987 Lto
+6658 5000 Mto
+6658 5009 Lto
+6687 5000 Mto
+6687 5001 Lto
+6716 5000 Mto
+6716 4972 Lto
+6745 5000 Mto
+6745 5011 Lto
+6774 5000 Mto
+6774 4999 Lto
+6803 5000 Mto
+6803 4988 Lto
+6832 5000 Mto
+6832 5016 Lto
+6861 5000 Mto
+6861 4986 Lto
+6890 5000 Mto
+6890 4981 Lto
+6919 5000 Mto
+6919 4995 Lto
+6948 5000 Mto
+6948 4993 Lto
+6977 5000 Mto
+6977 4993 Lto
+7006 5000 Mto
+7006 5005 Lto
+7035 5000 Mto
+7035 4996 Lto
+927 5976 Mto
+215 /F0 Font
+tb0
+927 5976 Mto
+2 SetColor
+/Ltp { Linetype2 } def /Lwd { Linewidth2 } def Slt
+71 71 Rt
+430 0 Rlt
+71 -71 Rt
+1 SetColor
+(ACF\255Beta1 )T
+tb1
+1499 5761 Mto
+tb2
+1 SetColor
+/Ltp { Linetype1 } def /Lwd { Linewidth1 } def Slt
+927 5976 Mto
+tb3
+0 -71 Rt
+927 6191 Boxto
+330 /F0 Font
+8107 5976 Mto
+215 /F0 Font
+tb0
+8107 5976 Mto
+2 SetColor
+/Ltp { Linetype2 } def /Lwd { Linewidth2 } def Slt
+71 71 Rt
+430 0 Rlt
+71 -71 Rt
+1 SetColor
+(ACF\255Beta2 )T
+tb1
+8679 5761 Mto
+tb2
+0 SetColor
+8107 5976 Mto
+tb3
+0 -71 Rt
+8107 6191 FillBoxto
+1 SetColor
+/Ltp { Linetype1 } def /Lwd { Linewidth1 } def Slt
+300 /F0 Font
+8038 3760 Mto
+8038 3820 Lto
+8763 3760 Mto
+8763 3820 Lto
+9488 3760 Mto
+9488 3820 Lto
+10213 3760 Mto
+10213 3820 Lto
+10938 3760 Mto
+10938 3820 Lto
+11663 3760 Mto
+11663 3820 Lto
+12388 3760 Mto
+12388 3820 Lto
+13113 3760 Mto
+13113 3820 Lto
+13838 3760 Mto
+13838 3820 Lto
+8038 3760 Mto
+8038 3880 Lto
+7969 3460 Mto
+(0) T
+9488 3760 Mto
+9488 3880 Lto
+9349 3460 Mto
+(50)T
+10938 3760 Mto
+10938 3880 Lto
+10729 3460 Mto
+(100)T
+12388 3760 Mto
+12388 3880 Lto
+12179 3460 Mto
+(150)T
+13838 3760 Mto
+13838 3880 Lto
+13629 3460 Mto
+(200)T
+7980 3760 Mto
+14360 3760 Lto
+14 SetColor
+/Ltp { Linetype14 } def /Lwd { Linewidth14 } def Slt
+7980 5000 Mto
+14360 5000 Lto
+1 SetColor
+/Ltp { Linetype1 } def /Lwd { Linewidth1 } def Slt
+/Rot 360 def
+7980 3760 Mto
+8040 3760 Lto
+7980 4007 Mto
+8040 4007 Lto
+7980 4255 Mto
+8040 4255 Lto
+7980 4503 Mto
+8040 4503 Lto
+7980 4751 Mto
+8040 4751 Lto
+7980 5000 Mto
+8040 5000 Lto
+7980 5248 Mto
+8040 5248 Lto
+7980 5496 Mto
+8040 5496 Lto
+7980 5744 Mto
+8040 5744 Lto
+7980 5992 Mto
+8040 5992 Lto
+7980 6240 Mto
+8040 6240 Lto
+7980 5000 Mto
+8100 5000 Lto
+7930 4900 Mto
+(0) T
+7980 6240 Mto
+8100 6240 Lto
+7930 6140 Mto
+(1) T
+7980 3760 Mto
+7980 6240 Lto
+/Rot 0 def
+2 SetColor
+/Ltp { Linetype2 } def /Lwd { Linewidth2 } def Slt
+2 SetColor
+/Ltp { Linetype2 } def /Lwd { Linewidth2 } def Slt
+/Ltp { Linetype1 } def /Lwd { Linewidth1 } def Slt
+1 SetColor
+2 SetColor
+8067 5000 Mto
+8067 4977 Lto
+8096 5000 Mto
+8096 5049 Lto
+8125 5000 Mto
+8125 4986 Lto
+8154 5000 Mto
+8154 4996 Lto
+8183 5000 Mto
+8183 5005 Lto
+8212 5000 Mto
+8212 5014 Lto
+8241 5000 Mto
+8241 4999 Lto
+8270 5000 Mto
+8270 5020 Lto
+8299 5000 Mto
+8299 4999 Lto
+8328 5000 Mto
+8328 5004 Lto
+8357 5000 Mto
+8357 4985 Lto
+8386 5000 Mto
+8386 4999 Lto
+8415 5000 Mto
+8415 5008 Lto
+8444 5000 Mto
+8444 5005 Lto
+8473 5000 Mto
+8473 4981 Lto
+8502 5000 Mto
+8502 5015 Lto
+8531 5000 Mto
+8531 4989 Lto
+8560 5000 Mto
+8560 5026 Lto
+8589 5000 Mto
+8589 4977 Lto
+8618 5000 Mto
+8618 5022 Lto
+8647 5000 Mto
+8647 4972 Lto
+8676 5000 Mto
+8676 5017 Lto
+8705 5000 Mto
+8705 4995 Lto
+8734 5000 Mto
+8734 4982 Lto
+8763 5000 Mto
+8763 4988 Lto
+8792 5000 Mto
+8792 5012 Lto
+8821 5000 Mto
+8821 4991 Lto
+8850 5000 Mto
+8850 5014 Lto
+8879 5000 Mto
+8879 5021 Lto
+8908 5000 Mto
+8908 4990 Lto
+8937 5000 Mto
+8937 5027 Lto
+8966 5000 Mto
+8966 4978 Lto
+8995 5000 Mto
+8995 5011 Lto
+9024 5000 Mto
+9024 4994 Lto
+9053 5000 Mto
+9053 5028 Lto
+9082 5000 Mto
+9082 4995 Lto
+9111 5000 Mto
+9111 5004 Lto
+9140 5000 Mto
+9140 4994 Lto
+9169 5000 Mto
+9169 5011 Lto
+9198 5000 Mto
+9198 4993 Lto
+9227 5000 Mto
+9227 4965 Lto
+9256 5000 Mto
+9256 5011 Lto
+9285 5000 Mto
+9285 4982 Lto
+9314 5000 Mto
+9314 4974 Lto
+9343 5000 Mto
+9343 4982 Lto
+9372 5000 Mto
+9372 4981 Lto
+9401 5000 Mto
+9401 5008 Lto
+9430 5000 Mto
+9430 4991 Lto
+9459 5000 Mto
+9459 4996 Lto
+9488 5000 Mto
+9488 4973 Lto
+9517 5000 Mto
+9517 4996 Lto
+9546 5000 Mto
+9546 4995 Lto
+9575 5000 Mto
+9575 5048 Lto
+9604 5000 Mto
+9604 4997 Lto
+9633 5000 Mto
+9633 5009 Lto
+9662 5000 Mto
+9662 5002 Lto
+9691 5000 Mto
+9691 5022 Lto
+9720 5000 Mto
+9720 4969 Lto
+9749 5000 Mto
+9749 5009 Lto
+9778 5000 Mto
+9778 4971 Lto
+9807 5000 Mto
+9807 5003 Lto
+9836 5000 Mto
+9836 5004 Lto
+9865 5000 Mto
+9865 5010 Lto
+9894 5000 Mto
+9894 5018 Lto
+9923 5000 Mto
+9923 5010 Lto
+9952 5000 Mto
+9952 4996 Lto
+9981 5000 Mto
+9981 4991 Lto
+10010 5000 Mto
+10010 4988 Lto
+10039 5000 Mto
+10039 4982 Lto
+10068 5000 Mto
+10068 5021 Lto
+10097 5000 Mto
+10097 5028 Lto
+10126 5000 Mto
+10126 4985 Lto
+10155 5000 Mto
+10155 4971 Lto
+10184 5000 Mto
+10184 4988 Lto
+10213 5000 Mto
+10213 4997 Lto
+10242 5000 Mto
+10242 4986 Lto
+10271 5000 Mto
+10271 5013 Lto
+10300 5000 Mto
+10300 5007 Lto
+10329 5000 Mto
+10329 5017 Lto
+10358 5000 Mto
+10358 4987 Lto
+10387 5000 Mto
+10387 4987 Lto
+10416 5000 Mto
+10416 5011 Lto
+10445 5000 Mto
+10445 4997 Lto
+10474 5000 Mto
+10474 5006 Lto
+10503 5000 Mto
+10503 5029 Lto
+10532 5000 Mto
+10532 5012 Lto
+10561 5000 Mto
+10561 5050 Lto
+10590 5000 Mto
+10590 4990 Lto
+10619 5000 Mto
+10619 5010 Lto
+10648 5000 Mto
+10648 4994 Lto
+10677 5000 Mto
+10677 5020 Lto
+10706 5000 Mto
+10706 5006 Lto
+10735 5000 Mto
+10735 5014 Lto
+10764 5000 Mto
+10764 5016 Lto
+10793 5000 Mto
+10793 4996 Lto
+10822 5000 Mto
+10822 5005 Lto
+10851 5000 Mto
+10851 5024 Lto
+10880 5000 Mto
+10880 4995 Lto
+10909 5000 Mto
+10909 5020 Lto
+10938 5000 Mto
+10938 4973 Lto
+10967 5000 Mto
+10967 4988 Lto
+10996 5000 Mto
+10996 5011 Lto
+11025 5000 Mto
+11025 4980 Lto
+11054 5000 Mto
+11054 4985 Lto
+11083 5000 Mto
+11083 5018 Lto
+11112 5000 Mto
+11112 4988 Lto
+11141 5000 Mto
+11141 5006 Lto
+11170 5000 Mto
+11170 4964 Lto
+11199 5000 Mto
+11199 5026 Lto
+11228 5000 Mto
+11228 5008 Lto
+11257 5000 Mto
+11257 4990 Lto
+11286 5000 Mto
+11286 5058 Lto
+11315 5000 Mto
+11315 4993 Lto
+11344 5000 Mto
+11344 4993 Lto
+11373 5000 Mto
+11373 5025 Lto
+11402 5000 Mto
+11402 5016 Lto
+11431 5000 Mto
+11431 4970 Lto
+11460 5000 Mto
+11460 5018 Lto
+11489 5000 Mto
+11489 4989 Lto
+11518 5000 Mto
+11518 4992 Lto
+11547 5000 Mto
+11547 5027 Lto
+11576 5000 Mto
+11576 4960 Lto
+11605 5000 Mto
+11605 4959 Lto
+11634 5000 Mto
+11634 5048 Lto
+11663 5000 Mto
+11663 5004 Lto
+11692 5000 Mto
+11692 4983 Lto
+11721 5000 Mto
+11721 5004 Lto
+11750 5000 Mto
+11750 4971 Lto
+11779 5000 Mto
+11779 5000 Lto
+11808 5000 Mto
+11808 4990 Lto
+11837 5000 Mto
+11837 5003 Lto
+11866 5000 Mto
+11866 4984 Lto
+11895 5000 Mto
+11895 5001 Lto
+11924 5000 Mto
+11924 4993 Lto
+11953 5000 Mto
+11953 4985 Lto
+11982 5000 Mto
+11982 4981 Lto
+12011 5000 Mto
+12011 4974 Lto
+12040 5000 Mto
+12040 5015 Lto
+12069 5000 Mto
+12069 4992 Lto
+12098 5000 Mto
+12098 5009 Lto
+12127 5000 Mto
+12127 4985 Lto
+12156 5000 Mto
+12156 4993 Lto
+12185 5000 Mto
+12185 4989 Lto
+12214 5000 Mto
+12214 4998 Lto
+12243 5000 Mto
+12243 4991 Lto
+12272 5000 Mto
+12272 5004 Lto
+12301 5000 Mto
+12301 5014 Lto
+12330 5000 Mto
+12330 4971 Lto
+12359 5000 Mto
+12359 5020 Lto
+12388 5000 Mto
+12388 4987 Lto
+12417 5000 Mto
+12417 4981 Lto
+12446 5000 Mto
+12446 5005 Lto
+12475 5000 Mto
+12475 5008 Lto
+12504 5000 Mto
+12504 4990 Lto
+12533 5000 Mto
+12533 4984 Lto
+12562 5000 Mto
+12562 4981 Lto
+12591 5000 Mto
+12591 4984 Lto
+12620 5000 Mto
+12620 5002 Lto
+12649 5000 Mto
+12649 4997 Lto
+12678 5000 Mto
+12678 4985 Lto
+12707 5000 Mto
+12707 5011 Lto
+12736 5000 Mto
+12736 4992 Lto
+12765 5000 Mto
+12765 5000 Lto
+12794 5000 Mto
+12794 5039 Lto
+12823 5000 Mto
+12823 4975 Lto
+12852 5000 Mto
+12852 5005 Lto
+12881 5000 Mto
+12881 4991 Lto
+12910 5000 Mto
+12910 5024 Lto
+12939 5000 Mto
+12939 5013 Lto
+12968 5000 Mto
+12968 4977 Lto
+12997 5000 Mto
+12997 5012 Lto
+13026 5000 Mto
+13026 4983 Lto
+13055 5000 Mto
+13055 5009 Lto
+13084 5000 Mto
+13084 5017 Lto
+13113 5000 Mto
+13113 4995 Lto
+13142 5000 Mto
+13142 5015 Lto
+13171 5000 Mto
+13171 4994 Lto
+13200 5000 Mto
+13200 5007 Lto
+13229 5000 Mto
+13229 4998 Lto
+13258 5000 Mto
+13258 5029 Lto
+13287 5000 Mto
+13287 5024 Lto
+13316 5000 Mto
+13316 4988 Lto
+13345 5000 Mto
+13345 5009 Lto
+13374 5000 Mto
+13374 5012 Lto
+13403 5000 Mto
+13403 4994 Lto
+13432 5000 Mto
+13432 5028 Lto
+13461 5000 Mto
+13461 5011 Lto
+13490 5000 Mto
+13490 4998 Lto
+13519 5000 Mto
+13519 5003 Lto
+13548 5000 Mto
+13548 5011 Lto
+13577 5000 Mto
+13577 5020 Lto
+13606 5000 Mto
+13606 5010 Lto
+13635 5000 Mto
+13635 5002 Lto
+13664 5000 Mto
+13664 4997 Lto
+13693 5000 Mto
+13693 4988 Lto
+13722 5000 Mto
+13722 4982 Lto
+13751 5000 Mto
+13751 5013 Lto
+13780 5000 Mto
+13780 5009 Lto
+13809 5000 Mto
+13809 5026 Lto
+13838 5000 Mto
+13838 5011 Lto
+13867 5000 Mto
+13867 4980 Lto
+13896 5000 Mto
+13896 5013 Lto
+13925 5000 Mto
+13925 4988 Lto
+13954 5000 Mto
+13954 4987 Lto
+13983 5000 Mto
+13983 4980 Lto
+14012 5000 Mto
+14012 5022 Lto
+14041 5000 Mto
+14041 5012 Lto
+14070 5000 Mto
+14070 4995 Lto
+14099 5000 Mto
+14099 5017 Lto
+14128 5000 Mto
+14128 5024 Lto
+14157 5000 Mto
+14157 4994 Lto
+14186 5000 Mto
+14186 5005 Lto
+14215 5000 Mto
+14215 5004 Lto
+8107 5976 Mto
+215 /F0 Font
+tb0
+8107 5976 Mto
+2 SetColor
+/Ltp { Linetype2 } def /Lwd { Linewidth2 } def Slt
+71 71 Rt
+430 0 Rlt
+71 -71 Rt
+1 SetColor
+(ACF\255Beta2 )T
+tb1
+8679 5761 Mto
+tb2
+1 SetColor
+/Ltp { Linetype1 } def /Lwd { Linewidth1 } def Slt
+8107 5976 Mto
+tb3
+0 -71 Rt
+8107 6191 Boxto
+330 /F0 Font
+927 2856 Mto
+215 /F0 Font
+tb0
+927 2856 Mto
+2 SetColor
+/Ltp { Linetype2 } def /Lwd { Linewidth2 } def Slt
+71 71 Rt
+430 0 Rlt
+71 -71 Rt
+1 SetColor
+(ACF\255Beta3 )T
+tb1
+1499 2641 Mto
+tb2
+0 SetColor
+927 2856 Mto
+tb3
+0 -71 Rt
+927 3071 FillBoxto
+1 SetColor
+/Ltp { Linetype1 } def /Lwd { Linewidth1 } def Slt
+300 /F0 Font
+858 640 Mto
+858 700 Lto
+1583 640 Mto
+1583 700 Lto
+2308 640 Mto
+2308 700 Lto
+3033 640 Mto
+3033 700 Lto
+3758 640 Mto
+3758 700 Lto
+4483 640 Mto
+4483 700 Lto
+5208 640 Mto
+5208 700 Lto
+5933 640 Mto
+5933 700 Lto
+6658 640 Mto
+6658 700 Lto
+858 640 Mto
+858 760 Lto
+789 340 Mto
+(0) T
+2308 640 Mto
+2308 760 Lto
+2169 340 Mto
+(50)T
+3758 640 Mto
+3758 760 Lto
+3549 340 Mto
+(100)T
+5208 640 Mto
+5208 760 Lto
+4999 340 Mto
+(150)T
+6658 640 Mto
+6658 760 Lto
+6449 340 Mto
+(200)T
+800 640 Mto
+7180 640 Lto
+14 SetColor
+/Ltp { Linetype14 } def /Lwd { Linewidth14 } def Slt
+800 1880 Mto
+7180 1880 Lto
+1 SetColor
+/Ltp { Linetype1 } def /Lwd { Linewidth1 } def Slt
+/Rot 360 def
+800 640 Mto
+860 640 Lto
+800 887 Mto
+860 887 Lto
+800 1135 Mto
+860 1135 Lto
+800 1383 Mto
+860 1383 Lto
+800 1631 Mto
+860 1631 Lto
+800 1880 Mto
+860 1880 Lto
+800 2128 Mto
+860 2128 Lto
+800 2376 Mto
+860 2376 Lto
+800 2624 Mto
+860 2624 Lto
+800 2872 Mto
+860 2872 Lto
+800 3120 Mto
+860 3120 Lto
+800 1880 Mto
+920 1880 Lto
+750 1780 Mto
+(0) T
+800 3120 Mto
+920 3120 Lto
+750 3020 Mto
+(1) T
+800 640 Mto
+800 3120 Lto
+/Rot 0 def
+2 SetColor
+/Ltp { Linetype2 } def /Lwd { Linewidth2 } def Slt
+2 SetColor
+/Ltp { Linetype2 } def /Lwd { Linewidth2 } def Slt
+/Ltp { Linetype1 } def /Lwd { Linewidth1 } def Slt
+1 SetColor
+2 SetColor
+887 1880 Mto
+887 1862 Lto
+916 1880 Mto
+916 1920 Lto
+945 1880 Mto
+945 1876 Lto
+974 1880 Mto
+974 1882 Lto
+1003 1880 Mto
+1003 1884 Lto
+1032 1880 Mto
+1032 1902 Lto
+1061 1880 Mto
+1061 1872 Lto
+1090 1880 Mto
+1090 1898 Lto
+1119 1880 Mto
+1119 1889 Lto
+1148 1880 Mto
+1148 1879 Lto
+1177 1880 Mto
+1177 1868 Lto
+1206 1880 Mto
+1206 1880 Lto
+1235 1880 Mto
+1235 1896 Lto
+1264 1880 Mto
+1264 1880 Lto
+1293 1880 Mto
+1293 1858 Lto
+1322 1880 Mto
+1322 1887 Lto
+1351 1880 Mto
+1351 1879 Lto
+1380 1880 Mto
+1380 1910 Lto
+1409 1880 Mto
+1409 1864 Lto
+1438 1880 Mto
+1438 1906 Lto
+1467 1880 Mto
+1467 1861 Lto
+1496 1880 Mto
+1496 1903 Lto
+1525 1880 Mto
+1525 1865 Lto
+1554 1880 Mto
+1554 1861 Lto
+1583 1880 Mto
+1583 1865 Lto
+1612 1880 Mto
+1612 1890 Lto
+1641 1880 Mto
+1641 1867 Lto
+1670 1880 Mto
+1670 1885 Lto
+1699 1880 Mto
+1699 1896 Lto
+1728 1880 Mto
+1728 1866 Lto
+1757 1880 Mto
+1757 1904 Lto
+1786 1880 Mto
+1786 1856 Lto
+1815 1880 Mto
+1815 1900 Lto
+1844 1880 Mto
+1844 1868 Lto
+1873 1880 Mto
+1873 1916 Lto
+1902 1880 Mto
+1902 1870 Lto
+1931 1880 Mto
+1931 1876 Lto
+1960 1880 Mto
+1960 1875 Lto
+1989 1880 Mto
+1989 1895 Lto
+2018 1880 Mto
+2018 1872 Lto
+2047 1880 Mto
+2047 1847 Lto
+2076 1880 Mto
+2076 1890 Lto
+2105 1880 Mto
+2105 1866 Lto
+2134 1880 Mto
+2134 1851 Lto
+2163 1880 Mto
+2163 1876 Lto
+2192 1880 Mto
+2192 1861 Lto
+2221 1880 Mto
+2221 1884 Lto
+2250 1880 Mto
+2250 1865 Lto
+2279 1880 Mto
+2279 1869 Lto
+2308 1880 Mto
+2308 1854 Lto
+2337 1880 Mto
+2337 1885 Lto
+2366 1880 Mto
+2366 1862 Lto
+2395 1880 Mto
+2395 1936 Lto
+2424 1880 Mto
+2424 1869 Lto
+2453 1880 Mto
+2453 1882 Lto
+2482 1880 Mto
+2482 1886 Lto
+2511 1880 Mto
+2511 1892 Lto
+2540 1880 Mto
+2540 1846 Lto
+2569 1880 Mto
+2569 1879 Lto
+2598 1880 Mto
+2598 1848 Lto
+2627 1880 Mto
+2627 1876 Lto
+2656 1880 Mto
+2656 1889 Lto
+2685 1880 Mto
+2685 1888 Lto
+2714 1880 Mto
+2714 1895 Lto
+2743 1880 Mto
+2743 1900 Lto
+2772 1880 Mto
+2772 1871 Lto
+2801 1880 Mto
+2801 1867 Lto
+2830 1880 Mto
+2830 1873 Lto
+2859 1880 Mto
+2859 1859 Lto
+2888 1880 Mto
+2888 1898 Lto
+2917 1880 Mto
+2917 1906 Lto
+2946 1880 Mto
+2946 1863 Lto
+2975 1880 Mto
+2975 1872 Lto
+3004 1880 Mto
+3004 1873 Lto
+3033 1880 Mto
+3033 1877 Lto
+3062 1880 Mto
+3062 1863 Lto
+3091 1880 Mto
+3091 1899 Lto
+3120 1880 Mto
+3120 1886 Lto
+3149 1880 Mto
+3149 1892 Lto
+3178 1880 Mto
+3178 1868 Lto
+3207 1880 Mto
+3207 1863 Lto
+3236 1880 Mto
+3236 1887 Lto
+3265 1880 Mto
+3265 1885 Lto
+3294 1880 Mto
+3294 1879 Lto
+3323 1880 Mto
+3323 1914 Lto
+3352 1880 Mto
+3352 1894 Lto
+3381 1880 Mto
+3381 1926 Lto
+3410 1880 Mto
+3410 1873 Lto
+3439 1880 Mto
+3439 1877 Lto
+3468 1880 Mto
+3468 1874 Lto
+3497 1880 Mto
+3497 1903 Lto
+3526 1880 Mto
+3526 1885 Lto
+3555 1880 Mto
+3555 1884 Lto
+3584 1880 Mto
+3584 1896 Lto
+3613 1880 Mto
+3613 1860 Lto
+3642 1880 Mto
+3642 1893 Lto
+3671 1880 Mto
+3671 1909 Lto
+3700 1880 Mto
+3700 1866 Lto
+3729 1880 Mto
+3729 1897 Lto
+3758 1880 Mto
+3758 1854 Lto
+3787 1880 Mto
+3787 1862 Lto
+3816 1880 Mto
+3816 1884 Lto
+3845 1880 Mto
+3845 1867 Lto
+3874 1880 Mto
+3874 1870 Lto
+3903 1880 Mto
+3903 1894 Lto
+3932 1880 Mto
+3932 1869 Lto
+3961 1880 Mto
+3961 1893 Lto
+3990 1880 Mto
+3990 1845 Lto
+4019 1880 Mto
+4019 1902 Lto
+4048 1880 Mto
+4048 1886 Lto
+4077 1880 Mto
+4077 1874 Lto
+4106 1880 Mto
+4106 1921 Lto
+4135 1880 Mto
+4135 1878 Lto
+4164 1880 Mto
+4164 1865 Lto
+4193 1880 Mto
+4193 1899 Lto
+4222 1880 Mto
+4222 1880 Lto
+4251 1880 Mto
+4251 1844 Lto
+4280 1880 Mto
+4280 1892 Lto
+4309 1880 Mto
+4309 1868 Lto
+4338 1880 Mto
+4338 1861 Lto
+4367 1880 Mto
+4367 1897 Lto
+4396 1880 Mto
+4396 1853 Lto
+4425 1880 Mto
+4425 1829 Lto
+4454 1880 Mto
+4454 1915 Lto
+4483 1880 Mto
+4483 1888 Lto
+4512 1880 Mto
+4512 1866 Lto
+4541 1880 Mto
+4541 1884 Lto
+4570 1880 Mto
+4570 1850 Lto
+4599 1880 Mto
+4599 1882 Lto
+4628 1880 Mto
+4628 1865 Lto
+4657 1880 Mto
+4657 1876 Lto
+4686 1880 Mto
+4686 1863 Lto
+4715 1880 Mto
+4715 1886 Lto
+4744 1880 Mto
+4744 1878 Lto
+4773 1880 Mto
+4773 1871 Lto
+4802 1880 Mto
+4802 1873 Lto
+4831 1880 Mto
+4831 1850 Lto
+4860 1880 Mto
+4860 1889 Lto
+4889 1880 Mto
+4889 1882 Lto
+4918 1880 Mto
+4918 1880 Lto
+4947 1880 Mto
+4947 1870 Lto
+4976 1880 Mto
+4976 1879 Lto
+5005 1880 Mto
+5005 1874 Lto
+5034 1880 Mto
+5034 1877 Lto
+5063 1880 Mto
+5063 1869 Lto
+5092 1880 Mto
+5092 1883 Lto
+5121 1880 Mto
+5121 1895 Lto
+5150 1880 Mto
+5150 1857 Lto
+5179 1880 Mto
+5179 1908 Lto
+5208 1880 Mto
+5208 1877 Lto
+5237 1880 Mto
+5237 1865 Lto
+5266 1880 Mto
+5266 1873 Lto
+5295 1880 Mto
+5295 1883 Lto
+5324 1880 Mto
+5324 1865 Lto
+5353 1880 Mto
+5353 1872 Lto
+5382 1880 Mto
+5382 1867 Lto
+5411 1880 Mto
+5411 1865 Lto
+5440 1880 Mto
+5440 1883 Lto
+5469 1880 Mto
+5469 1875 Lto
+5498 1880 Mto
+5498 1880 Lto
+5527 1880 Mto
+5527 1890 Lto
+5556 1880 Mto
+5556 1872 Lto
+5585 1880 Mto
+5585 1882 Lto
+5614 1880 Mto
+5614 1906 Lto
+5643 1880 Mto
+5643 1859 Lto
+5672 1880 Mto
+5672 1888 Lto
+5701 1880 Mto
+5701 1876 Lto
+5730 1880 Mto
+5730 1905 Lto
+5759 1880 Mto
+5759 1890 Lto
+5788 1880 Mto
+5788 1872 Lto
+5817 1880 Mto
+5817 1892 Lto
+5846 1880 Mto
+5846 1872 Lto
+5875 1880 Mto
+5875 1889 Lto
+5904 1880 Mto
+5904 1896 Lto
+5933 1880 Mto
+5933 1872 Lto
+5962 1880 Mto
+5962 1890 Lto
+5991 1880 Mto
+5991 1879 Lto
+6020 1880 Mto
+6020 1892 Lto
+6049 1880 Mto
+6049 1866 Lto
+6078 1880 Mto
+6078 1907 Lto
+6107 1880 Mto
+6107 1906 Lto
+6136 1880 Mto
+6136 1879 Lto
+6165 1880 Mto
+6165 1885 Lto
+6194 1880 Mto
+6194 1877 Lto
+6223 1880 Mto
+6223 1869 Lto
+6252 1880 Mto
+6252 1907 Lto
+6281 1880 Mto
+6281 1884 Lto
+6310 1880 Mto
+6310 1876 Lto
+6339 1880 Mto
+6339 1888 Lto
+6368 1880 Mto
+6368 1886 Lto
+6397 1880 Mto
+6397 1898 Lto
+6426 1880 Mto
+6426 1891 Lto
+6455 1880 Mto
+6455 1882 Lto
+6484 1880 Mto
+6484 1875 Lto
+6513 1880 Mto
+6513 1870 Lto
+6542 1880 Mto
+6542 1872 Lto
+6571 1880 Mto
+6571 1898 Lto
+6600 1880 Mto
+6600 1891 Lto
+6629 1880 Mto
+6629 1896 Lto
+6658 1880 Mto
+6658 1896 Lto
+6687 1880 Mto
+6687 1864 Lto
+6716 1880 Mto
+6716 1889 Lto
+6745 1880 Mto
+6745 1874 Lto
+6774 1880 Mto
+6774 1868 Lto
+6803 1880 Mto
+6803 1858 Lto
+6832 1880 Mto
+6832 1905 Lto
+6861 1880 Mto
+6861 1884 Lto
+6890 1880 Mto
+6890 1878 Lto
+6919 1880 Mto
+6919 1897 Lto
+6948 1880 Mto
+6948 1898 Lto
+6977 1880 Mto
+6977 1882 Lto
+7006 1880 Mto
+7006 1885 Lto
+7035 1880 Mto
+7035 1890 Lto
+927 2856 Mto
+215 /F0 Font
+tb0
+927 2856 Mto
+2 SetColor
+/Ltp { Linetype2 } def /Lwd { Linewidth2 } def Slt
+71 71 Rt
+430 0 Rlt
+71 -71 Rt
+1 SetColor
+(ACF\255Beta3 )T
+tb1
+1499 2641 Mto
+tb2
+1 SetColor
+/Ltp { Linetype1 } def /Lwd { Linewidth1 } def Slt
+927 2856 Mto
+tb3
+0 -71 Rt
+927 3071 Boxto
+%Graph end
+
+restore
+showpage
+%%EOF
