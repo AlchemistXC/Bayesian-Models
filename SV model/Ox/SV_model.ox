@@ -9,20 +9,21 @@ decl y, n;
 decl mu0, sm0, sm02, nu0, delta0, a0, b0;
 decl phi, sig2, sig, mu, h;
 decl t;
-decl modephi, modeh, mlphi, mlh, Hphi, Hh, vphi2, vphi, vh2, vh, mphi, mh, sphi, sh;
+decl modeh, mlh, Hh, vh2, vh, mh, sh;
 
 progress_bar(const i, const iter, const burnin);
 ranmu(const dphi, const dsig2, const dh);
 ransigma2(const dphi, const dmu, const dh);
 rantrancenorm(const r, const c, const mu, const sigma, const a, const b);
-flphi(const dX, const adFunc, const avScore, const amHess);
-flh(const dX, const adFunc, const avScore, const amHess);
+ranphiprop(const dsig2, const dmu, const dh);
+flogphi(const dphi, const dsig2, const dmu, const dh);
+ranhprop(const dphi, const dmu, const dsig2, const dh);
+flogh(const dht, const dphi, const dmu, const dsig2, const dh);
 
 main(){
   decl iter, burnin, irs, sample, sampleh;
-  decl acphi, ach, car_count_h, car_count_phi;
-  decl logrhophi, logrhoh, rhophi, rhoh, prop, logu, u, score, H, qphi1, qphi2, qh1, qh2, qphi, qh,
-       pphi1, pphi2, ph1, ph2, pphi, ph;
+  decl ach, acphi;
+  decl rho, u, p, q, prop;
 
   // Data
   y = loadmat("USCPI.csv");
@@ -37,7 +38,7 @@ main(){
   h = zeros(n, 1); //h
 // Set prior
   a0 = 0.5;  //(phi+1)/2 ~ Beta(ap0, bp0)
-  b0 = 0.5;	  
+  b0 = 0.5;
   nu0 = 0.01;  //sig^2 ~ InvGamma(n0/2, S0/2)
   delta0 = 0.01;
   mu0 = 0;  //mu ~ N(mm0, sm0^2)
@@ -52,76 +53,37 @@ main(){
   sampleh = zeros(iter, n);
 
 // Set MH
-  acphi = 0; // acceptance count of phi
   ach = 0;	// all acceptance count of h
-  car_count_phi = 0;
-  car_count_h = 0;
+  acphi = 0;  //acceptance count of phi
   for(decl i = -burnin; i < iter; i++){
 	progress_bar(i, iter, burnin);
 	// Simulate mu
 	mu = ranmu(phi, sig2, h);
 	// Simulate sigma2
 	sig2 = ransigma2(phi, mu, h);
-	// Simulate phi	(AR-MH)
-	modephi = 0; // initial value
-	MaxBFGS(flphi, &modephi, &mlphi, 0, 1);
-	Num1Derivative(flphi, modephi, &sphi);
-	Num2Derivative(flphi, modephi, &Hphi);
-	vphi2 = -1/Hphi;
-	vphi = sqrt(vphi2);
-	mphi = modephi + vphi*vphi*sphi;
-	// AR step
-	do{
-	  prop = rantrancenorm(1, 1, mphi, vphi, -1, 1);
-	  flphi(prop, &qphi1, 0, 0);
-	  qphi2 = mlphi + sphi * (prop - modephi) + 0.5 * Hphi * (prop - modephi)^2; 
-	  qphi = qphi1 - qphi2; 
-	  logu = log(ranu(1, 1));
-	  car_count_phi++;	  
-	}while(logu > qphi);
-    //MH step
-	flphi(phi, &pphi1, 0, 0);
-	pphi2 = mlphi + sphi*(phi - modephi) + 0.5 * Hphi * (phi - modephi)^2;
-	pphi = pphi1 - pphi2;
-	if(pphi < 0){logrhophi = 0;}
-	else{
-	  if(qphi < 0){logrhophi = -pphi;}
-	  else{logrhophi = qphi - pphi;}
-	}
-    logu = log(ranu(1, 1));
-	if(logu <= logrhophi){
-	  phi = prop;
-	  acphi++;
-	}
-	//Simulate h (AR-MH)
-    for(t = 0; t < n; t++){
-	  MaxBFGS(flh, &modeh, &mlh, 0, 1);
-	  Num1Derivative(flh, modeh, &sh);
-	  Num2Derivative(flh, modeh, &Hh);
-	  vh2 = -1/Hh;
-	  vh = sqrt(vh2);
-	  mh = modeh + vh*vh*sh;
-	//A-R step
-	  do{
-		prop = mh + vh * rann(1, 1);
-	    flh(prop, &qh1, 0, 0);
-		qh2 = mlh + sh*(prop - modeh) + 0.5 * Hh * (prop - modeh)^2;
-		qh = qh1 - qh2;
-		logu = log(ranu(1, 1));
-		car_count_h++;
-	  }while(logu > qh);
-	//M-H step
-	  flh(h[t], &ph1, 0, 0);
-	  ph2 = mlh + sh*(h[t] - modeh) + 0.5 * Hh * (h[t] - modeh)^2;
-	  ph = ph1 - ph2;
-	  if(ph < 0){logrhoh = 0;}
-	  else{
-	    if(qh < 0){logrhoh = - ph;}
-		else{logrhoh = qh - ph;}
+	// Simulate phi (MH)
+	prop = ranphiprop(sig2, mu, h);
+	p =   flogphi(prop[0], sig2, mu, h)
+	    + 0.5 * (prop[0] - prop[1])^2 / prop[2];
+	q =   flogphi(phi, sig2, mu, h)
+	    + 0.5 * (phi - prop[1])^2 / prop[2];
+	rho = exp(p - q);
+	  u = ranu(1, 1);
+	  if(u <= rho){
+	    phi = prop[0];
+		acphi++;
 	  }
-	  logu = log(ranu(1, 1));
-	  if(logu <= logrhoh){
-	    h[t] = prop;
+	//Simulate h (MH)
+    for(t = 0; t < n; t++){
+	  prop = ranhprop(phi, mu, sig2, h);
+	  p =  flogh(prop[0], phi, mu, sig2, h)
+	     + 0.5 * (prop[0] - prop[1])^2 / prop[2];
+	  q =  flogh(h[t], phi, mu, sig2, h)
+	     + 0.5 * (h[t] - prop[1])^2 / prop[2];
+	  rho = exp(p - q);
+	  u = ranu(1, 1);
+	  if(u <= rho){
+	    h[t] = prop[0];
 		ach++;
 	  }
 	}
@@ -134,13 +96,11 @@ main(){
   decl out = new ReportMCMC(sample);
   out.SetVarNames({"mu","phi","sigma"});
   out.Report();
-  println("Acceptance rate of phi (AR step): ", (burnin+iter)/car_count_phi*100, "%");
-  println("Acceptance rate of phi (MH step): ", acphi/(burnin+iter)*100, "%");
-  println("Average acceptance rate of each element in vector h (AR step): ", ((burnin+iter)*n)/car_count_h*100,"%");
-  println("Average acceptance rate of each element in vector h (MH step): ", ach/((burnin+iter)*n)*100,"%");
   decl meanh = meanc(sampleh);
   Draw(0, meanh);
   SaveDrawWindow("h.eps");
+  println("Acceptance rate of phi (MH): ", acphi/(burnin+iter)*100, "%");
+  println("Average acceptance rate of each element in vector h (MH): ", ach/((burnin+iter)*n)*100,"%");
 }// End of main
 //-----------------------------------------------
 
@@ -200,39 +160,70 @@ rantrancenorm(const r, const c, const mu, const sigma, const a, const b){// tran
   return(x);
 }
 
-flphi(const dX, const adFunc, const avScore, const amHess){
-  decl dphi, c1, c2, c3, c4, logf;
-  dphi = dX;
+ranphiprop(const dsig2, const dmu, const dh){
+  decl muphi, sig2phi, sigphi, c1, c2, c3, dphi;
+  c1 = dh - dmu;
+  c2 = sumc(c1[0:(n-2)].^2);
+  c3 = sumc(c1[1:(n-1)] .* c1[0:(n-2)]);
+  sig2phi = dsig2 / c2;
+  sigphi = sqrt(sig2phi);
+  muphi = c3 / c2;
+  dphi = rantrancenorm(1, 1, muphi, sigphi, -1, 1);
+  return(dphi ~ muphi ~ sig2phi);
+}
+
+flogphi(const dphi, const dsig2, const dmu, const dh){
+  decl c1, c2, c3, c4, logf;
   c1 = 1 - dphi^2;
-  c2 = h - mu;
+  c2 = dh - dmu;
   c3 = sumc((c2[1:(n-1)] - dphi*c2[0:(n-2)]).^2); 
   logf =   log(densbeta((dphi+1)/2,a0,b0))
          + 0.5 * log(c1)
-		 - 0.5 * c3 / sig2
-		 - 0.5 * (c2[0].^2) * c1 / sig2;
-  adFunc[0] = logf;
-  return 1;			   
+		 - 0.5 * c3 / dsig2
+		 - 0.5 * (c2[0].^2) * c1 / dsig2;
+  return(logf);		 
 }
 
-flh(const dX, const adFunc, const avScore, const amHess){
-  decl dht, f, dmut, dsig2t, c;
-  dht = dX;
-  f = - y[t]^2 * exp(-dht) - 0.5 * dht;
+ranhprop(const dphi, const dmu, const dsig2, const dh){
+  decl sig2t, ht, mut, c, dht;
   if(t == 0){
-    dsig2t = sig2;
-	dmut = phi * ((1 - phi) * mu + h[1]); 
+    sig2t = dsig2;
+	ht = dphi * ((1 - dphi) * dmu + dh[1]); 
   }
   else{
     if(t != n-1){
-	  c = 1 + phi^2;
-	  dsig2t = sig2 / c;
-	  dmut = phi * (h[t+1] + h[t-1])/ c;  
+	  c = 1 + dphi^2;
+	  sig2t = dsig2 / c;
+	  ht = dphi * (dh[t+1] + dh[t-1])/ c;  
 	}
 	else{
-	  dsig2t = sig2;
-	  dmut = phi * h[n-2] + (1 - phi) * mu;
+	  sig2t = dsig2;
+	  ht = dphi * dh[n-2] + (1 - dphi) * dmu;
 	}
   }
-  adFunc[0] = f - 0.5 * (dht - dmut) * (dht - dmut) / dsig2t;
-  return 1;
+  mut = ht ;//+ 0.5 * sig2t * ((y[t]^2) * exp(-ht) - 1);
+  dht = sqrt(sig2t) * rann(1, 1) + mut;
+  return(dht ~ mut ~ sig2t);
+}
+
+flogh(const dht, const dphi, const dmu, const dsig2, const dh){
+  decl sig2t, ht, c, f;
+  f = - 0.5 * (y[t]^2 * exp(-dht) + dht);
+  if(t == 0){
+    sig2t = dsig2;
+	ht = dphi * ((1 - dphi) * dmu + dh[1]); 
+  }
+  else{
+    if(t != n-1){
+	  c = 1 + dphi^2;
+	  sig2t = dsig2 / c;
+	  ht = dphi * (dh[t+1] + dh[t-1])/ c;  
+	}
+	else{
+	  sig2t = dsig2;
+	  ht = dphi * dh[n-2] + (1 - dphi) * dmu;
+	}
+  }
+  f = f - 0.5 * (dht - ht)^2 / sig2t;
+  return(f);
 }
