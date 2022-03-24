@@ -36,8 +36,8 @@ main(){
   mu  = 1;	//mu  
   h = zeros(n, 1); //h
 // Set prior
-  a0 = 20;  //(phi+1)/2 ~ Beta(ap0, bp0)
-  b0 = 1.5;	  
+  a0 = 0.5;  //(phi+1)/2 ~ Beta(ap0, bp0)
+  b0 = 0.5;	  
   nu0 = 0.01;  //sig^2 ~ InvGamma(n0/2, S0/2)
   delta0 = 0.01;
   mu0 = 0;  //mu ~ N(mm0, sm0^2)
@@ -108,6 +108,7 @@ main(){
 		qh2 = mlh + sh*(prop - modeh) + 0.5 * Hh * (prop - modeh)^2;
 		qh = qh1 - qh2;
 		logu = log(ranu(1, 1));
+		car_count_h++;
 	  }while(logu > qh);
 	//M-H step
 	  flh(h[t], &ph1, 0, 0);
@@ -116,16 +117,14 @@ main(){
 	  if(ph < 0){logrhoh = 0;}
 	  else{
 	    if(qh < 0){logrhoh = - ph;}
-		else{logrhoh =qh - ph;}
+		else{logrhoh = qh - ph;}
 	  }
 	  logu = log(ranu(1, 1));
 	  if(logu <= logrhoh){
 	    h[t] = prop;
 		ach++;
-		}
+	  }
 	}
-	
-	
 	//Record data when i>=0
 	if(i >= 0){
 	  sample[i][] = mu ~ phi ~ sqrt(sig2);
@@ -135,8 +134,10 @@ main(){
   decl out = new ReportMCMC(sample);
   out.SetVarNames({"mu","phi","sigma"});
   out.Report();
-  println("Acceptance rate of phi: ", acphi/(burnin+iter)*100, "%");
-  println("Average acceptance rate of each element in vector h: ", ach/((burnin+iter)*n)*100,"%");
+  println("Acceptance rate of phi (AR step): ", (burnin+iter)/car_count_phi*100, "%");
+  println("Acceptance rate of phi (MH step): ", acphi/(burnin+iter)*100, "%");
+  println("Average acceptance rate of each element in vector h (AR step): ", ((burnin+iter)*n)/car_count_h*100,"%");
+  println("Average acceptance rate of each element in vector h (MH step): ", ach/((burnin+iter)*n)*100,"%");
   decl meanh = meanc(sampleh);
   Draw(0, meanh);
   SaveDrawWindow("h.eps");
@@ -219,13 +220,13 @@ flh(const dX, const adFunc, const avScore, const amHess){
   f = - y[t]^2 * exp(-dht) - 0.5 * dht;
   if(t == 0){
     dsig2t = sig2;
-	dmut = (1 - phi) * mu + phi * h[1]; 
+	dmut = phi * ((1 - phi) * mu + h[1]); 
   }
   else{
     if(t != n-1){
 	  c = 1 + phi^2;
 	  dsig2t = sig2 / c;
-	  dmut = phi * (h[t-1] + h[t+1])/ c;  
+	  dmut = phi * (h[t+1] + h[t-1])/ c;  
 	}
 	else{
 	  dsig2t = sig2;
