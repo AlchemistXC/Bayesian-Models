@@ -35,7 +35,7 @@ logitnoinflpost(const dbeta, const y, const X){
   for(decl i = 0; i < n; i++){
 	lF1 = - log(1 + exp(-X*beta[][i]));
     lF2 = - log(1 + exp(X*beta[][i]));
-    pll[i] = sumc(y .* lF1 + (1 - y) .* lF2) - (2*k-1)/4 * log(beta[][i]' * X' * X * beta[][i]) + loggamma((2*k-1)/4) - (k/2)*log(M_2PI);
+    pll[i] = sumc(y .* lF1 + (1 - y) .* lF2) - (2*k-1)/4 * log(beta[][i]' * X' * X * beta[][i]/2) + loggamma((2*k-1)/4) - (k/2)*log(M_2PI);
   }
   
   return(pll);
@@ -62,7 +62,7 @@ hmnoinflogit(const niter, const y, const X, const scale){
 	else beta[i][] = beta[i-1][];
   }
   decl burnin = niter * 0.1;
-  beta = beta[(burnin - 1):(niter - 1)][];
+  beta = beta[burnin:(niter - 1)][];
   return(beta);
 }
 
