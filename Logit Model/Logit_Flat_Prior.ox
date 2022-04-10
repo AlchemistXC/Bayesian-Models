@@ -36,9 +36,9 @@ hmflatlogit(const niter, const y, const X, const scale){
 	else beta[i][] = beta[i-1][];
   }
   decl burnin = niter * 0.1;
-  beta = beta[(burnin - 1):(niter - 1)][];
+  beta = beta[burnin:(niter - 1)][];
   return(beta);
-}
+} 
 
 main(){
   decl bank, n, p, sample, dlm;
@@ -53,5 +53,5 @@ main(){
   sample = hmflatlogit(10000, y, X, 1);
   decl out = new ReportMCMC(sample);
   out.SetVarNames({"beta1","beta2", "beta3", "beta4"});
-  out.Report();
+  out.Report();	 
 }
